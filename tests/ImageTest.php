@@ -1,82 +1,38 @@
 <?php
 
 use LaraZeus\QrCode\Image;
-use PHPUnit\Framework\TestCase;
 
-class ImageTest extends TestCase
-{
-    /**
-     * The location to save the testing image.
-     *
-     * @var string
-     */
-    protected $testImageSaveLocation;
+beforeEach(function () {
+    $this->imagePath = file_get_contents(__DIR__ . '/Images/simplesoftware-icon-grey-blue.png');
+    $this->image = new Image($this->imagePath);
 
-    /**
-     * The location to save the compare image.
-     *
-     * @var string
-     */
-    protected $compareTestSaveLocation;
+    $this->testImageSaveLocation = __DIR__ . '/testImage.png';
+    $this->compareTestSaveLocation = __DIR__ . '/compareImage.png';
+});
+afterEach(function () {
+    // @unlink($this->testImageSaveLocation);
+    // @unlink($this->compareTestSaveLocation);
+});
+test('it loads an image string into a resource', function () {
+    imagepng(imagecreatefromstring($this->imagePath), $this->compareTestSaveLocation);
+    imagepng($this->image->getImageResource(), $this->testImageSaveLocation);
 
-    /**
-     * The path to the image used to test.
-     *
-     * @var string
-     */
-    protected $imagePath;
+    $correctImage = file_get_contents($this->compareTestSaveLocation);
+    $testImage = file_get_contents($this->testImageSaveLocation);
 
-    /**
-     * The Image object.
-     *
-     * @var Image
-     */
-    protected $image;
+    expect($testImage)->toEqual($correctImage);
+});
+test('it gets the correct height', function () {
+    $correctHeight = 512;
 
-    protected function setUp(): void
-    {
-        $this->imagePath = file_get_contents(dirname(__FILE__) . '/Images/simplesoftware-icon-grey-blue.png');
-        $this->image = new Image($this->imagePath);
+    $testHeight = $this->image->getHeight();
 
-        $this->testImageSaveLocation = dirname(__FILE__) . '/testImage.png';
-        $this->compareTestSaveLocation = dirname(__FILE__) . '/compareImage.png';
-    }
+    expect($testHeight)->toEqual($correctHeight);
+});
+test('it gets the correct width', function () {
+    $correctWidth = 512;
 
-    protected function tearDown(): void
-    {
-        @unlink($this->testImageSaveLocation);
-        @unlink($this->compareTestSaveLocation);
-    }
+    $testWidth = $this->image->getWidth();
 
-    /**
-     * Must test that the outputted PNG is the same because you can not compare resources.
-     */
-    public function test_it_loads_an_image_string_into_a_resource()
-    {
-        imagepng(imagecreatefromstring($this->imagePath), $this->compareTestSaveLocation);
-        imagepng($this->image->getImageResource(), $this->testImageSaveLocation);
-
-        $correctImage = file_get_contents($this->compareTestSaveLocation);
-        $testImage = file_get_contents($this->testImageSaveLocation);
-
-        $this->assertEquals($correctImage, $testImage);
-    }
-
-    public function test_it_gets_the_correct_height()
-    {
-        $correctHeight = 512;
-
-        $testHeight = $this->image->getHeight();
-
-        $this->assertEquals($correctHeight, $testHeight);
-    }
-
-    public function test_it_gets_the_correct_width()
-    {
-        $correctWidth = 512;
-
-        $testWidth = $this->image->getWidth();
-
-        $this->assertEquals($correctWidth, $testWidth);
-    }
-}
+    expect($testWidth)->toEqual($correctWidth);
+});

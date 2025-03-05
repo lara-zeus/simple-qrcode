@@ -1,55 +1,40 @@
 <?php
 
 use LaraZeus\QrCode\DataTypes\Email;
-use PHPUnit\Framework\TestCase;
 
-class EmailTest extends TestCase
-{
-    protected function setUp(): void
-    {
-        $this->email = new Email;
-    }
+beforeEach(function () {
+    $this->email = new Email;
+});
+test('it generates the proper format when only an email address is supplied', function () {
+    $this->email->create(['foo@bar.com']);
 
-    public function test_it_generates_the_proper_format_when_only_an_email_address_is_supplied()
-    {
-        $this->email->create(['foo@bar.com']);
+    $properFormat = 'mailto:foo@bar.com';
 
-        $properFormat = 'mailto:foo@bar.com';
+    expect((string) $this->email)->toEqual($properFormat);
+});
+test('it generates the proper format when an email subject and body are supplied', function () {
+    $this->email->create(['foo@bar.com', 'foo', 'bar']);
 
-        $this->assertEquals($properFormat, strval($this->email));
-    }
+    $properFormat = 'mailto:foo@bar.com?subject=foo&body=bar';
 
-    public function test_it_generates_the_proper_format_when_an_email_subject_and_body_are_supplied()
-    {
-        $this->email->create(['foo@bar.com', 'foo', 'bar']);
+    expect((string) $this->email)->toEqual($properFormat);
+});
+test('it generates the proper format when an email and subject are supplied', function () {
+    $this->email->create(['foo@bar.com', 'foo']);
 
-        $properFormat = 'mailto:foo@bar.com?subject=foo&body=bar';
+    $properFormat = 'mailto:foo@bar.com?subject=foo';
 
-        $this->assertEquals($properFormat, strval($this->email));
-    }
+    expect((string) $this->email)->toEqual($properFormat);
+});
+test('it generates the proper format when only a subject is provided', function () {
+    $this->email->create([null, 'foo']);
 
-    public function test_it_generates_the_proper_format_when_an_email_and_subject_are_supplied()
-    {
-        $this->email->create(['foo@bar.com', 'foo']);
+    $properFormat = 'mailto:?subject=foo';
 
-        $properFormat = 'mailto:foo@bar.com?subject=foo';
+    expect((string) $this->email)->toEqual($properFormat);
+});
+test('it throws an exception when an invalid email is given', function () {
+    $this->expectException(InvalidArgumentException::class);
 
-        $this->assertEquals($properFormat, strval($this->email));
-    }
-
-    public function test_it_generates_the_proper_format_when_only_a_subject_is_provided()
-    {
-        $this->email->create([null, 'foo']);
-
-        $properFormat = 'mailto:?subject=foo';
-
-        $this->assertEquals($properFormat, strval($this->email));
-    }
-
-    public function test_it_throws_an_exception_when_an_invalid_email_is_given()
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        $this->email->create(['foo']);
-    }
-}
+    $this->email->create(['foo']);
+});

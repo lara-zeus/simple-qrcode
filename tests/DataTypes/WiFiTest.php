@@ -1,70 +1,57 @@
 <?php
 
 use LaraZeus\QrCode\DataTypes\WiFi;
-use PHPUnit\Framework\TestCase;
 
-class WiFiTest extends TestCase
-{
-    protected function setUp(): void
-    {
-        $this->wifi = new Wifi;
-    }
+beforeEach(function () {
+    $this->wifi = new Wifi;
+});
+test('it generates a proper format with just the ssid', function () {
+    $this->wifi->create([
+        0 => [
+            'ssid' => 'foo',
+        ],
+    ]);
 
-    public function test_it_generates_a_proper_format_with_just_the_ssid()
-    {
-        $this->wifi->create([
-            0 => [
-                'ssid' => 'foo',
-            ],
-        ]);
+    $properFormat = 'WIFI:S:foo;';
 
-        $properFormat = 'WIFI:S:foo;';
+    expect((string) $this->wifi)->toEqual($properFormat);
+});
+test('it generates a proper format for a ssid that is hidden', function () {
+    $this->wifi->create([
+        0 => [
+            'ssid' => 'foo',
+            'hidden' => 'true',
+        ],
+    ]);
 
-        $this->assertEquals($properFormat, strval($this->wifi));
-    }
+    $properFormat = 'WIFI:S:foo;H:true;';
 
-    public function test_it_generates_a_proper_format_for_a_ssid_that_is_hidden()
-    {
-        $this->wifi->create([
-            0 => [
-                'ssid' => 'foo',
-                'hidden' => 'true',
-            ],
-        ]);
+    expect((string) $this->wifi)->toEqual($properFormat);
+});
+test('it generates a proper format for a ssid encryption and password', function () {
+    $this->wifi->create([
+        0 => [
+            'ssid' => 'foo',
+            'encryption' => 'WPA',
+            'password' => 'bar',
+        ],
+    ]);
 
-        $properFormat = 'WIFI:S:foo;H:true;';
+    $properFormat = 'WIFI:T:WPA;S:foo;P:bar;';
 
-        $this->assertEquals($properFormat, strval($this->wifi));
-    }
+    expect((string) $this->wifi)->toEqual($properFormat);
+});
+test('it generates a proper format for a ssid encryption password and is hidden', function () {
+    $this->wifi->create([
+        0 => [
+            'ssid' => 'foo',
+            'encryption' => 'WPA',
+            'password' => 'bar',
+            'hidden' => 'true',
+        ],
+    ]);
 
-    public function test_it_generates_a_proper_format_for_a_ssid_encryption_and_password()
-    {
-        $this->wifi->create([
-            0 => [
-                'ssid' => 'foo',
-                'encryption' => 'WPA',
-                'password' => 'bar',
-            ],
-        ]);
+    $properFormat = 'WIFI:T:WPA;S:foo;P:bar;H:true;';
 
-        $properFormat = 'WIFI:T:WPA;S:foo;P:bar;';
-
-        $this->assertEquals($properFormat, strval($this->wifi));
-    }
-
-    public function test_it_generates_a_proper_format_for_a_ssid_encryption_password_and_is_hidden()
-    {
-        $this->wifi->create([
-            0 => [
-                'ssid' => 'foo',
-                'encryption' => 'WPA',
-                'password' => 'bar',
-                'hidden' => 'true',
-            ],
-        ]);
-
-        $properFormat = 'WIFI:T:WPA;S:foo;P:bar;H:true;';
-
-        $this->assertEquals($properFormat, strval($this->wifi));
-    }
-}
+    expect((string) $this->wifi)->toEqual($properFormat);
+});

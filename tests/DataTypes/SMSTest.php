@@ -1,39 +1,28 @@
 <?php
 
 use LaraZeus\QrCode\DataTypes\SMS;
-use PHPUnit\Framework\TestCase;
 
-class SMSTest extends TestCase
-{
-    protected function setUp(): void
-    {
-        $this->sms = new SMS;
-    }
+beforeEach(function () {
+    $this->sms = new SMS;
+});
+test('it generates a proper format with a phone number', function () {
+    $this->sms->create(['555-555-5555']);
 
-    public function test_it_generates_a_proper_format_with_a_phone_number()
-    {
-        $this->sms->create(['555-555-5555']);
+    $properFormat = 'sms:555-555-5555';
 
-        $properFormat = 'sms:555-555-5555';
+    expect((string) $this->sms)->toEqual($properFormat);
+});
+test('it generate a proper format with a message', function () {
+    $this->sms->create([null, 'foo']);
 
-        $this->assertEquals($properFormat, strval($this->sms));
-    }
+    $properFormat = 'sms:&body=foo';
 
-    public function test_it_generate_a_proper_format_with_a_message()
-    {
-        $this->sms->create([null, 'foo']);
+    expect((string) $this->sms)->toEqual($properFormat);
+});
+test('it generates a proper format with a phone number and message', function () {
+    $this->sms->create(['555-555-5555', 'foo']);
 
-        $properFormat = 'sms:&body=foo';
+    $properFormat = 'sms:555-555-5555&body=foo';
 
-        $this->assertEquals($properFormat, strval($this->sms));
-    }
-
-    public function test_it_generates_a_proper_format_with_a_phone_number_and_message()
-    {
-        $this->sms->create(['555-555-5555', 'foo']);
-
-        $properFormat = 'sms:555-555-5555&body=foo';
-
-        $this->assertEquals($properFormat, strval($this->sms));
-    }
-}
+    expect((string) $this->sms)->toEqual($properFormat);
+});
