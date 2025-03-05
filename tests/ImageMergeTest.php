@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use SimpleSoftwareIO\QrCode\Image;
-use SimpleSoftwareIO\QrCode\ImageMerge;
+use LaraZeus\QrCode\Image;
+use LaraZeus\QrCode\ImageMerge;
 
 class ImageMergeTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleSoftwareIO\QrCode;
+namespace LaraZeus\QrCode;
 
 use Illuminate\Support\ServiceProvider;
 

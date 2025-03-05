@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Build Status](https://travis-ci.org/LaraZeus/simple-qrcode.svg?branch=master)](https://travis-ci.org/LaraZeus/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/stable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![License](https://poser.pugx.org/lara-zeus/simple-qrcode/license.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Total Downloads](https://poser.pugx.org/lara-zeus/simple-qrcode/downloads.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode)
 
 - [소개(Introduction)](#docs-introduction)
 - [번역(Translations)](#docs-translations)
@@ -25,7 +25,7 @@ Simple QrCode는 인기가 많은 라라벨 프레임워크 상에서 쉽게 사
 우선, Simple QrCode 패키지를 `composer.json` 파일의 `require`에 추가해주세요:
 
 	"require": {
-		"simplesoftwareio/simple-qrcode": "~2"
+		"lara-zeus/simple-qrcode": "~2"
 	}
 
 그 다음으로, `composer update` 명령을 실행해주세요.
@@ -33,12 +33,12 @@ Simple QrCode는 인기가 많은 라라벨 프레임워크 상에서 쉽게 사
 #### Service Provider
 
 ###### Laravel <= 5.4
-`config/app.php`의 `providers` 배열 안에, `SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class`를 등록해주세요.
+`config/app.php`의 `providers` 배열 안에, `LaraZeus\QrCode\QrCodeServiceProvider::class`를 등록해주세요.
 
 #### Aliases
 
 ###### Laravel <= 5.4
-마지막으로, `config/app.php` 설정 파일의 `aliases` 배열 안에, `'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class`를 등록해주세요.
+마지막으로, `config/app.php` 설정 파일의 `aliases` 배열 안에, `'QrCode' => LaraZeus\QrCode\Facades\QrCode::class`를 등록해주세요.
 
 <a id="docs-ideas"></a>
 ## 간단한 아이디어(Simple Ideas)
@@ -200,7 +200,7 @@ Qr코드를 만들기 위한 문자 인코딩을 변경할 수 있습니다. 기
 
 >`merge`를 사용하면서 Qr리더가 잘 스캔하게 하기 위해서는 높은 오류 복원율을 사용해야합니다. `errorCorrection('H')`를 사용하기를 권장합니다.
 
-![Merged Logo](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
+![Merged Logo](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
 
 #### 이진 문자열 병합(Merge Binary String)
 
@@ -352,7 +352,7 @@ PNG 이미지를 `base64_encode`를 사용하여 인코딩된 raw string을 사�
 
 `BaconQrCodeGenerator` 클래스를 인스턴스화하면, 라라벨을 사용하지 않는 곳에서 이 패키지를 사용할 수 있습니다.
 
-	use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+	use LaraZeus\QrCode\BaconQrCodeGenerator;
 
 	$qrcode = new BaconQrCodeGenerator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

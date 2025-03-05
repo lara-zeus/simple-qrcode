@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Build Status](https://travis-ci.org/LaraZeus/simple-qrcode.svg?branch=master)](https://travis-ci.org/LaraZeus/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/stable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![License](https://poser.pugx.org/lara-zeus/simple-qrcode/license.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Total Downloads](https://poser.pugx.org/lara-zeus/simple-qrcode/downloads.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode)
 
 #### [Deutsch](http://www.simplesoftware.io/#/docs/simple-qrcode/de) | [Español](http://www.simplesoftware.io/#/docs/simple-qrcode/es) | [Français](http://www.simplesoftware.io/#/docs/simple-qrcode/fr) | [Italiano](http://www.simplesoftware.io/#/docs/simple-qrcode/it) | [Português](http://www.simplesoftware.io/#/docs/simple-qrcode/pt-br) | [Русский](http://www.simplesoftware.io/#/docs/simple-qrcode/ru) | [日本語](http://www.simplesoftware.io/#/docs/simple-qrcode/ja) | [한국어](http://www.simplesoftware.io/#/docs/simple-qrcode/kr) | [हिंदी](http://www.simplesoftware.io/#/docs/simple-qrcode/hi) | [简体中文](http://www.simplesoftware.io/#/docs/simple-qrcode/zh-cn) | [العربية](https://www.simplesoftware.io/#/docs/simple-qrcode/ar)
 
@@ -16,7 +16,7 @@
 ## イントロダクション
 Simple QrCode は [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode) を元に作られた 人気のあるLaravelフレームワークで簡単に使う事のできるラッパーです。Laravelユーザーになじみのある使い方ができるように開発されました。
 
-![Example 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
+![Example 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
 
 <a id="docs-translations"></a>
 ## 翻訳
@@ -35,7 +35,7 @@ PNG形式の画像を生成する場合は、**必ず**`imagick` PHP拡張をイ
 
 > 4.1.0を作成するときのミスで、後方互換性が失われる変更がmasterブランチに入りました。
 > `generate`メソッドは現在は `Illuminate\Support\HtmlString` のインスタンスを返します。
-> 詳細は https://github.com/SimpleSoftwareIO/simple-qrcode/issues/205 を参照してください。
+> 詳細は https://github.com/LaraZeus/simple-qrcode/issues/205 を参照してください。
 
 v3での読み込みに関する問題を引き起こすLaravelファサードの問題がありました。
 この問題を解決するためには、後方互換性が失われる変更を加える必要があり、v4がリリースされるに至った経緯があります。
@@ -45,7 +45,7 @@ v2からのアップグレードの場合は既存コードの変更は必要あ
 全ての`QrCode`ファサードへの参照は以下のように変更する必要があります:
 
 ```
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use LaraZeus\QrCode\Facades\QrCode;
 ```
 
 <a id="docs-configuration"></a>
@@ -53,7 +53,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 #### Composer
 
-`composer require simplesoftwareio/simple-qrcode "~4"` を実行してパッケージを追加します。
+`composer require lara-zeus/simple-qrcode "~4"` を実行してパッケージを追加します。
 
 Laravelが自動的に必要なパッケージをインストールします。
 
@@ -88,7 +88,7 @@ Laravelが自動的に必要なパッケージをインストールします。
 
 これで「Make me into a QrCode!」というQRコードが作成されます。
 
-![QRコード生成例](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/make-me-into-a-qrcode.png?raw=true)
+![QRコード生成例](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/make-me-into-a-qrcode.png?raw=true)
 
 #### 生成する
 
@@ -147,7 +147,7 @@ Laravel Blade に以下の様に書くことで モダンなブラウザに表�
 	QrCode::backgroundColor(255, 0, 0); // 赤が背景色のQRコード
 	QrCode::backgroundColor(255, 0, 0, 25); // 透明度25%で赤が背景色のQRコード
 
-![赤が背景色のQRコード](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![赤が背景色で透過なQRコード](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
+![赤が背景色のQRコード](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![赤が背景色で透過なQRコード](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
 
 #### グラデーション `(int $startRed, int $startGreen, int $startBlue, int $endRed, int $endGreen, int $endBlue, string $type)`
 
@@ -157,11 +157,11 @@ Laravel Blade に以下の様に書くことで モダンなブラウザに表�
 
 | タイプ                | 例                                                                                                                                    |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| `vertical`         | ![Vertical](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/vertical.png?raw=true)                 |
-| `horizontal`       | ![Horizontal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/horizontal.png?raw=true)             |
-| `diagonal`         | ![Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/diagonal.png?raw=true)                 |
-| `inverse_diagonal` | ![Inverse Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
-| `radial`           | ![Radial](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/radial.png?raw=true)                     |
+| `vertical`         | ![Vertical](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/vertical.png?raw=true)                 |
+| `horizontal`       | ![Horizontal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/horizontal.png?raw=true)             |
+| `diagonal`         | ![Diagonal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/diagonal.png?raw=true)                 |
+| `inverse_diagonal` | ![Inverse Diagonal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
+| `radial`           | ![Radial](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/radial.png?raw=true)                     |
 
 #### 切り出しシンボル色 `(int $eyeNumber, int $innerRed, int $innerGreen, int $innerBlue, int $outterRed = 0, int $outterGreen = 0, int $outterBlue = 0)`
 
@@ -171,9 +171,9 @@ Laravel Blade に以下の様に書くことで モダンなブラウザに表�
 
 | シンボル番号 | 例                                                                                                               |
 |--------|-----------------------------------------------------------------------------------------------------------------|
-| `0`    | ![Eye 0](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-0.png?raw=true)  |
-| `1`    | ![Eye 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)  |
-| `2`    | ![Eye  2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
+| `0`    | ![Eye 0](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-0.png?raw=true)  |
+| `1`    | ![Eye 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)  |
+| `2`    | ![Eye  2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
 
 
 #### スタイル `(string $style, float $size = 0.5)`
@@ -186,9 +186,9 @@ Laravel Blade に以下の様に書くことで モダンなブラウザに表�
 
 | スタイル     | 例                                                                                                                    |
 |----------|----------------------------------------------------------------------------------------------------------------------|
-| `square` | ![Square](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `dot`    | ![Dot](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/dot.png)                    |
-| `round`  | ![Round](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/round.png?raw=true)       |
+| `square` | ![Square](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `dot`    | ![Dot](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/dot.png)                    |
+| `round`  | ![Round](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/round.png?raw=true)       |
 
 #### 切り出しシンボルのスタイル `(string $style)`
 
@@ -198,8 +198,8 @@ Laravel Blade に以下の様に書くことで モダンなブラウザに表�
 
 | スタイル     | 例                                                                                                                    |
 |----------|----------------------------------------------------------------------------------------------------------------------|
-| `square` | ![Square](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `circle` | ![Circle](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true) |
+| `square` | ![Square](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `circle` | ![Circle](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true) |
 
 #### マージンの変更 `(int $margin)`
 
@@ -280,7 +280,7 @@ QRコードの生成に使われる文字コードを変更します。デフォ
 
 > `merge`メソッドを使用して画像を重ねているときでもQRコードを読み取れるようにするために、エラー訂正レベルも高くするべきです。`errorCorrection('H')`の使用を推奨します。
 
-![ロゴを重ねた状態のサンプル](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
+![ロゴを重ねた状態のサンプル](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
 
 #### バイナリ文字列による重ね合わせ `(string $content, float $percentage = .2)`
 
@@ -430,7 +430,7 @@ QRコードの生成に使われる文字コードを変更します。デフォ
 
 このパッケージは`Generater`クラスをインスタンス化することで、Laravelの外でも使えます。
 
-	use SimpleSoftwareIO\QrCode\Generator;
+	use LaraZeus\QrCode\Generator;
 
 	$qrcode = new Generator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

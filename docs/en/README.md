@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Build Status](https://travis-ci.org/LaraZeus/simple-qrcode.svg?branch=master)](https://travis-ci.org/LaraZeus/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/stable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![License](https://poser.pugx.org/lara-zeus/simple-qrcode/license.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Total Downloads](https://poser.pugx.org/lara-zeus/simple-qrcode/downloads.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode)
 
 #### [Deutsch](http://www.simplesoftware.io/#/docs/simple-qrcode/de) | [Español](http://www.simplesoftware.io/#/docs/simple-qrcode/es) | [Français](http://www.simplesoftware.io/#/docs/simple-qrcode/fr) | [Italiano](http://www.simplesoftware.io/#/docs/simple-qrcode/it) | [Português](http://www.simplesoftware.io/#/docs/simple-qrcode/pt-br) | [Русский](http://www.simplesoftware.io/#/docs/simple-qrcode/ru) | [日本語](http://www.simplesoftware.io/#/docs/simple-qrcode/ja) | [한국어](http://www.simplesoftware.io/#/docs/simple-qrcode/kr) | [हिंदी](http://www.simplesoftware.io/#/docs/simple-qrcode/hi) | [简体中文](http://www.simplesoftware.io/#/docs/simple-qrcode/zh-cn)
 
@@ -22,7 +22,7 @@ Upload files with a single curl command from your terminal! `curl --upload-file 
 ## Introduction
 Simple QrCode is an easy to use wrapper for the popular Laravel framework based on the great work provided by [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  We created an interface that is familiar and easy to install for Laravel users.
 
-![Example 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
+![Example 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
 
 <a id="docs-upgrade"></a>
 ## Upgrade Guide
@@ -33,14 +33,14 @@ You **must** install the `imagick` PHP extension if you plan on using the `png` 
 
 #### v4
 
-> There was a mistake when creating 4.1.0 and allowing a backwards breaking change into the master branch.  The `generate` method will now return an instance of `Illuminate\Support\HtmlString` if you are running Laravel.  See https://github.com/SimpleSoftwareIO/simple-qrcode/issues/205 for more information.
+> There was a mistake when creating 4.1.0 and allowing a backwards breaking change into the master branch.  The `generate` method will now return an instance of `Illuminate\Support\HtmlString` if you are running Laravel.  See https://github.com/LaraZeus/simple-qrcode/issues/205 for more information.
 
 There was a Laravel facade issue within v3 that causes some loading issues.  The only way to fix this was to create a backwards breaking change so v4 has been released.  If you are coming from v2 there is no need to change any code.  The below change only effects users on v3.
 
 All references to the `QrCode` facade need to be changed to:
 
 ```
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use LaraZeus\QrCode\Facades\QrCode;
 ```
 
 <a id="docs-configuration"></a>
@@ -48,7 +48,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 #### Composer
 
-Run `composer require simplesoftwareio/simple-qrcode "~4"` to add the package. 
+Run `composer require lara-zeus/simple-qrcode "~4"` to add the package. 
 
 Laravel will automatically pick up and install the package.
 
@@ -79,18 +79,18 @@ You may embed a qrcode inside of an e-mail to allow your users to quickly scan. 
 ```
 // All examples below assume you are pulling in the QrCode facade with the following line of code. The Facade is auto-loaded for Laravel users.
 
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use LaraZeus\QrCode\Facades\QrCode;
 ```
 
 Using the QrCode Generator is very easy.  The most basic syntax is:
 
-	use SimpleSoftwareIO\QrCode\Facades\QrCode;
+	use LaraZeus\QrCode\Facades\QrCode;
 
 	QrCode::generate('Make me into a QrCode!');
 
 This will make a QrCode that says "Make me into a QrCode!"
 
-![Example QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/make-me-into-a-qrcode.png?raw=true)
+![Example QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/make-me-into-a-qrcode.png?raw=true)
 
 #### Generate `(string $data, string $filename = null)`
 
@@ -122,7 +122,7 @@ You can change the size of a QrCode by using the `size` method. Simply specify t
 
 	QrCode::size(100);
 
-![200 Pixels](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) ![250 Pixels](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/250-pixels.png?raw=true) 
+![200 Pixels](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) ![250 Pixels](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/250-pixels.png?raw=true) 
 
 #### Color `(int $red, int $green, int $blue, int $alpha = null)`
 
@@ -133,7 +133,7 @@ All colors must be expressed in RGBA (Red Green Blue Alpha).  You can change the
 	QrCode::color(255, 0, 0); // Red QrCode
 	QrCode::color(255, 0, 0, 25); //Red QrCode with 25% transparency 
 
-![Red QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-qrcode.png?raw=true) ![Red Transparent QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent.png?raw=true)
+![Red QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-qrcode.png?raw=true) ![Red Transparent QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-25-transparent.png?raw=true)
 
 #### Background Color `(int $red, int $green, int $blue, int $alpha = null)`
 
@@ -142,7 +142,7 @@ You can change the background color of a QrCode by calling the `backgroundColor`
 	QrCode::backgroundColor(255, 0, 0); // Red background QrCode
 	QrCode::backgroundColor(255, 0, 0, 25); //Red background QrCode with 25% transparency 
 
-![Red Background QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![Red Transparent Background QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
+![Red Background QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![Red Transparent Background QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
 
 #### Gradient `$startRed, $startGreen, $startBlue, $endRed, $endGreen, $endBlue, string $type)`
 
@@ -152,11 +152,11 @@ The following gradient types are supported:
 
 | Type | Example |
 | --- | --- |
-| `vertical` | ![Veritcal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/vertical.png?raw=true) |
-| `horizontal` | ![Horizontal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/horizontal.png?raw=true) |
-| `diagonal` | ![Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/diagonal.png?raw=true) |
-| `inverse_diagonal` | ![Invrse Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
-| `radial` | ![Radial](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/radial.png?raw=true) |
+| `vertical` | ![Veritcal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/vertical.png?raw=true) |
+| `horizontal` | ![Horizontal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/horizontal.png?raw=true) |
+| `diagonal` | ![Diagonal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/diagonal.png?raw=true) |
+| `inverse_diagonal` | ![Invrse Diagonal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
+| `radial` | ![Radial](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/radial.png?raw=true) |
 
 #### EyeColor `(int $eyeNumber, int $innerRed, int $innerGreen, int $innerBlue, int $outterRed = 0, int $outterGreen = 0, int $outterBlue = 0)`
 
@@ -166,9 +166,9 @@ You may change the eye colors by using the `eyeColor` method.
 
 | Eye Number | Example |
 | --- | --- |
-| `0` | ![Eye 0](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-0.png?raw=true) |
-| `1` | ![Eye 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)|
-| `2` | ![Eye  2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
+| `0` | ![Eye 0](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-0.png?raw=true) |
+| `1` | ![Eye 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)|
+| `2` | ![Eye  2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
 
 
 #### Style `(string $style, float $size = 0.5)`
@@ -179,9 +179,9 @@ The style can be easily swapped out with `square`, `dot,` or `round`.  This will
 
 | Style | Example |
 | --- | --- |
-| `square` | ![Square](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `dot` | ![Dot](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/dot.png)|
-| `round` | ![Round](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/round.png?raw=true) |
+| `square` | ![Square](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `dot` | ![Dot](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/dot.png)|
+| `round` | ![Round](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/round.png?raw=true) |
 
 #### Eye Style `(string $style)`
 
@@ -191,8 +191,8 @@ The eye within the QrCode supports two different styles, `square` and `circle`.
 
 | Style | Example |
 | --- | --- |
-| `square` | ![Square](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `circle` | ![Circle](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true)|
+| `square` | ![Square](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `circle` | ![Circle](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true)|
 
 #### Margin `(int $margin)`
 
@@ -272,7 +272,7 @@ The `merge` method merges an image over a QrCode.  This is commonly used to plac
 
 >You should use a high level of error correction when using the `merge` method to ensure that the QrCode is still readable.  We recommend using `errorCorrection('H')`.
 
-![Merged Logo](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
+![Merged Logo](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
 
 #### Merge Binary String `(string $content, float $percentage = .2)`
 
@@ -422,7 +422,7 @@ You can use a prefix found in the table below inside the `generate` section to c
 
 You may use this package outside of Laravel by instantiating a new `Generator` class.
 
-	use SimpleSoftwareIO\QrCode\Generator;
+	use LaraZeus\QrCode\Generator;
 
 	$qrcode = new Generator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

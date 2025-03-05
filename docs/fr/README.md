@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Build Status](https://travis-ci.org/LaraZeus/simple-qrcode.svg?branch=master)](https://travis-ci.org/LaraZeus/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/stable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![License](https://poser.pugx.org/lara-zeus/simple-qrcode/license.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Total Downloads](https://poser.pugx.org/lara-zeus/simple-qrcode/downloads.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode)
 
 - [Introduction](#docs-introduction)
 - [Traductions](#docs-translations)
@@ -25,7 +25,7 @@ Nous recherchons des utilisateurs parlant arabe, espagnol, français, coréen ou
 Commencez par ajouter le paquet QrCode à la section `require` de votre fichier `composer.json`: 
 
 	"require": {
-		"simplesoftwareio/simple-qrcode": "~2"
+		"lara-zeus/simple-qrcode": "~2"
 	}
 
 Lancez ensuite la commande `composer update`.
@@ -33,12 +33,12 @@ Lancez ensuite la commande `composer update`.
 #### Service Provider
 
 ###### Laravel <= 5.4
-Ajouter l'entrée `SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class` au tableau `providers` du fichier de configuration `config/app.php`.
+Ajouter l'entrée `LaraZeus\QrCode\QrCodeServiceProvider::class` au tableau `providers` du fichier de configuration `config/app.php`.
 
 #### Alias
 
 ###### Laravel <= 5.4
-Enfin, ajoutez l'entrée `'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class` au tableau `aliases` du fichier de configuration `config/app.php`.
+Enfin, ajoutez l'entrée `'QrCode' => LaraZeus\QrCode\Facades\QrCode::class` au tableau `aliases` du fichier de configuration `config/app.php`.
 
 <a id="docs-ideas"></a>
 ## Utilisations Simples
@@ -198,7 +198,7 @@ La méthode `merge` fusionne une image sur un QrCode. C'est une pratique courant
 
 > Vous devriez utiliser un haut niveau de correction d'erreur avec la méthode `merge` pour assurer la bonne lecture du QrCode. Nous recommandons l'utilisation de `errorCorrection('H')`.
 
-![Fusion de Logo](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
+![Fusion de Logo](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
 
 #### Fusion De Chaîne Binaire
 
@@ -334,7 +334,7 @@ Vous pouvez utiliser un des pseudos-protocoles du tableau suivant comme paramèt
 
 Vous pouvez utiliser ce paquet en dehors de Laravel en instanciant un objet de classe `BaconQrCodeGenerator`.
 
-	use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+	use LaraZeus\QrCode\BaconQrCodeGenerator;
 
 	$qrcode = new BaconQrCodeGenerator;
 	$qrcode->size(500)->generate('Créer un qrcode sans Laravel!');

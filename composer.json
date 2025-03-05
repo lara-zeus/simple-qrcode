@@ -1,5 +1,5 @@
 {
-    "name": "simplesoftwareio/simple-qrcode",
+    "name": "lara-zeus/simple-qrcode",
     "description": "Simple QrCode is a QR code generator made for Laravel.",
     "keywords": ["qrcode", "laravel", "simple", "generator", "wrapper"],
     "homepage": "https://www.simplesoftware.io/#/docs/simple-qrcode",
@@ -11,13 +11,22 @@
         }
     ],
     "require": {
-        "php": ">=7.2|^8.0",
+        "php": "^8.2",
       	"ext-gd": "*",
-        "bacon/bacon-qr-code": "^2.0"
+        "bacon/bacon-qr-code": "^3.0"
     },
     "require-dev": {
         "mockery/mockery": "~1",
-        "phpunit/phpunit": "~9"
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^8.6",
+        "larastan/larastan": "^3.0",
+        "nunomaduro/phpinsights": "^2.8",
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-arch": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "pestphp/pest-plugin-livewire": "^3.0",
+        "phpstan/extension-installer": "^1.4"
     },
     "suggest": {
         "ext-imagick": "Allows the generation of PNG QrCodes.",
@@ -25,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SimpleSoftwareIO\\QrCode\\": "src"
+            "LaraZeus\\QrCode\\": "src"
         }
     },
     "scripts": {
@@ -34,10 +43,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider"
+                "LaraZeus\\QrCode\\QrCodeServiceProvider"
             ],
             "aliases": {
-                "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
+                "QrCode": "LaraZeus\\QrCode\\Facades\\QrCode"
             }
         }
     }

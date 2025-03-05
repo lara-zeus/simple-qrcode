@@ -1,41 +1,61 @@
-Simple QrCode
+# Simple QrCode
+This is a fork from [SimpleSoftwareIO/simple-qrcode](https://github.com/SimpleSoftwareIO/simple-qrcode)
 ========================
 
-![Unit Tests](https://github.com/SimpleSoftwareIO/simple-qrcode/workflows/Unit%20Tests/badge.svg)
-[![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
-[![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
-[![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
-[![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+<p align="center">
 
-## [Deutsch](https://www.simplesoftware.io/#/docs/simple-qrcode/de) | [Español](https://www.simplesoftware.io/#/docs/simple-qrcode/es) | [Français](https://www.simplesoftware.io/#/docs/simple-qrcode/fr) | [Italiano](https://www.simplesoftware.io/#/docs/simple-qrcode/it) | [Português](https://www.simplesoftware.io/#/docs/simple-qrcode/pt-br) | [Русский](https://www.simplesoftware.io/#/docs/simple-qrcode/ru) | [日本語](https://www.simplesoftware.io/#/docs/simple-qrcode/ja) | [한국어](https://www.simplesoftware.io/#/docs/simple-qrcode/kr) | [हिंदी](https://www.simplesoftware.io/#/docs/simple-qrcode/hi) | [简体中文](https://www.simplesoftware.io/#/docs/simple-qrcode/zh-cn) | [العربية](https://www.simplesoftware.io/#/docs/simple-qrcode/ar)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/lara-zeus/simple-qrcode.svg?style=flat-square)](https://packagist.org/packages/lara-zeus/simple-qrcode)
+[![Tests](https://img.shields.io/github/actions/workflow/status/lara-zeus/simple-qrcode/run-tests.yml?label=tests&style=flat-square&branch=5.x)](https://github.com/lara-zeus/simple-qrcode/actions?query=workflow%3Arun-tests+branch%3A5.x)
+[![Code Style](https://img.shields.io/github/actions/workflow/status/lara-zeus/simple-qrcode/fix-php-code-style-issues.yml?label=code-style&flat-square)](https://github.com/lara-zeus/simple-qrcode/actions?query=workflow%3Afix-php-code-style-issues+branch%3A5.x)
+[![Total Downloads](https://img.shields.io/packagist/dt/lara-zeus/simple-qrcode.svg?style=flat-square)](https://packagist.org/packages/lara-zeus/simple-qrcode)
+[![Total Downloads](https://img.shields.io/github/stars/lara-zeus/simple-qrcode?style=flat-square)](https://github.com/lara-zeus/simple-qrcode)
 
-Language files are currently out of date.  We need volunteers to upgrade them to v4!  Please submit a PR request!
+</p>
+
+## Support Filament
+
+<a href="https://github.com/sponsors/danharrin">
+<img alt="filament-logo" src="https://larazeus.com/images/filament-sponsor-banner.webp">
+</a>
 
 ## Introduction
 Simple QrCode is an easy to use wrapper for the popular Laravel framework based on the great work provided by [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  We created an interface that is familiar and easy to install for Laravel users.
 
 ## Official Documentation
 
-Documentation for Simple QrCode can be found on our [website.](http://www.simplesoftware.io/#/docs/simple-qrcode)
+Documentation for Simple QrCode can be found on our [website.](http://larazeus.com/simple-qrcode)
 
 ## Examples
 
 ![Example 1](docs/imgs/example-1.png) ![Example 2](docs/imgs/example-2.png)
 
-## Use Cases
-<p align="center">
-  <a href="https://www.rsvpify.com">
-  	<img width="300" src="https://rsvpify.com/wp-content/uploads/2017/03/rsvpify-logo-header-rsvp.png">
-  </a>
-</p>
-<p align="center">
-  <a href="https://rsvpify.com/sell-tickets">Platform to sell tickets online</a>
-</p>
+## Used with:
+- Qr Code
+- ...
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on recent changes.
+
+## Support
+available support channels:
+* open an issue on [GitHub](https://github.com/lara-zeus/bolt/issues)
+* Email us using the [contact center](https://larazeus.com/contact-us)
 
 ## Contributing
 
-Please submit all issues and pull requests to the [simplesoftwareio/simple-qrcode](https://github.com/simplesoftwareio/simple-qrcode) repository on the develop branch!
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Security
+
+If you find any security-related issues, please email info@larazeus.com instead of using the issue tracker.
+
+## Credits
+
+-   [Lara Zeus (Ash)](https://github.com/atmonshi)
+-   [All Contributors](../../contributors)
+-   [All Contributors in SimpleSoftwareIO/simple-qrcode](https://github.com/SimpleSoftwareIO/simple-qrcode/graphs/contributors)
 
 ## License
 
-This software is released under the [MIT license.](https://opensource.org/licenses/MIT)
+The MIT License (MIT). Please have a look at [License File](LICENSE.md) for more information.

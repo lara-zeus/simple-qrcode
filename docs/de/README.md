@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Build Status](https://travis-ci.org/LaraZeus/simple-qrcode.svg?branch=master)](https://travis-ci.org/LaraZeus/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/stable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![License](https://poser.pugx.org/lara-zeus/simple-qrcode/license.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Total Downloads](https://poser.pugx.org/lara-zeus/simple-qrcode/downloads.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode)
 
 #### [Deutsch](http://www.simplesoftware.io/#/docs/simple-qrcode/de) | [Español](http://www.simplesoftware.io/#/docs/simple-qrcode/es) | [Français](http://www.simplesoftware.io/#/docs/simple-qrcode/fr) | [Italiano](http://www.simplesoftware.io/#/docs/simple-qrcode/it) | [Português](http://www.simplesoftware.io/#/docs/simple-qrcode/pt-br) | [Русский](http://www.simplesoftware.io/#/docs/simple-qrcode/ru) | [日本語](http://www.simplesoftware.io/#/docs/simple-qrcode/ja) | [한국어](http://www.simplesoftware.io/#/docs/simple-qrcode/kr) | [हिंदी](http://www.simplesoftware.io/#/docs/simple-qrcode/hi) | [简体中文](http://www.simplesoftware.io/#/docs/simple-qrcode/zh-cn)
 
@@ -21,31 +21,31 @@ Einfaches und schnelles Teilen von Dateien direkt aus der Kommandokonsole über 
 ## Einführung
 Simple QrCode stellt eine komfortable Schnittstelle zum Generieren von QrCodes für das beliebte Laravel Framework dar und basiert auf der großartigen Arbeit von [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode). Das Paket ist einfach zu installieren und bietet ein Laravel-Nutzern vertrautes Nutzererlebnis.   
 
-![Example 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
+![Example 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
 
 <a id="docs-upgrade"></a>
 ## Upgrade-Anleitung
 
-Um von v2 auf v3 zu aktualisieren, muss die Versionsangabe der `simplesoftwareio/simple-qrcode` Abhängigkeit in der `composer.json` Datei auf `~4` geändert werden:
+Um von v2 auf v3 zu aktualisieren, muss die Versionsangabe der `lara-zeus/simple-qrcode` Abhängigkeit in der `composer.json` Datei auf `~4` geändert werden:
 
 	"require": {
-		"simplesoftwareio/simple-qrcode": "~4"
+		"lara-zeus/simple-qrcode": "~4"
 	}
   
-Ein abschließender Aufruf von `composer update simplesoftwareio/simple-qrcode` aktualisiert das installierte Paket.
+Ein abschließender Aufruf von `composer update lara-zeus/simple-qrcode` aktualisiert das installierte Paket.
 
 >Um das `png` Bildformat zu verwenden, **muss zwingend** die `imagick` PHP Extension installiert werden. 
 
 #### v4
 
-> In Version 4.1.0 hat sich ein Breaking Change eingeschlichen, der die Abwärtskompatibilität beeinträchtigt. Die `generate` Methode liefert in Laravel statt eines Strings nun eine `Illuminate\Support\HtmlString` Instanz zurück. Weitere Informationen dazu unter https://github.com/SimpleSoftwareIO/simple-qrcode/issues/205.
+> In Version 4.1.0 hat sich ein Breaking Change eingeschlichen, der die Abwärtskompatibilität beeinträchtigt. Die `generate` Methode liefert in Laravel statt eines Strings nun eine `Illuminate\Support\HtmlString` Instanz zurück. Weitere Informationen dazu unter https://github.com/LaraZeus/simple-qrcode/issues/205.
 
 Es gab einen Fehler im Bereich der Laravel Facades von v3, der einige Probleme beim Laden verursachte.  Da die Problembehebung eine nicht abwärtskompatible Änderung nötig gemacht hat, wurde v4 veröffentlicht.  Bei einem Upgrade von v2 muss kein Code angepasst werden; die nachfolgende Änderung betrifft nur Nutzer der v3.     
 
 Sämtliche Verweise auf die `QrCode` Facade müssen wie folgt geändert werden:
 
 ```
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use LaraZeus\QrCode\Facades\QrCode;
 ```
 
 <a id="docs-configuration"></a>
@@ -53,7 +53,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 #### Composer
 
-Das Paket kann durch Ausführung von `composer require simplesoftwareio/simple-qrcode "~4"` installiert werden. 
+Das Paket kann durch Ausführung von `composer require lara-zeus/simple-qrcode "~4"` installiert werden. 
 
 Laravel wird das Paket automatisch integrieren.
 
@@ -84,12 +84,12 @@ Ein QrCode kann in eine E-Mail eingebettet werden, um den Nutzern ein schnelles 
 ```
 // Alle Beispiele gehen davon aus, dass die QrCode Facade über die untenstehende Code-Zeile eingebunden wird. Für Laravel Benutzer wird die Facade automatisch geladen. 
 
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use LaraZeus\QrCode\Facades\QrCode;
 ```
 
 Die Verwendung des QrCode Generators ist sehr einfach. Die einfachste Art der Nutzung ist:
 
-	use SimpleSoftwareIO\QrCode\Facades\QrCode;
+	use LaraZeus\QrCode\Facades\QrCode;
 
 	QrCode::generate('Wandel mich in einen QrCode!');
 
@@ -125,7 +125,7 @@ Die gewünschte Größe des QrCodes kann über die `size` Methode festgelegt wer
 
 	QrCode::size(100);
 
-![200 Pixels](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) ![250 Pixels](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/250-pixels.png?raw=true) 
+![200 Pixels](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) ![250 Pixels](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/250-pixels.png?raw=true) 
 
 #### Color `(int $red, int $green, int $blue, int $alpha = null)`
 
@@ -136,7 +136,7 @@ Alle Farben werden im RGBA (Rot, Grün, Blau, Alpha) Format angegeben. Die Farbe
 	QrCode::color(255, 0, 0); // Roter QrCode
 	QrCode::color(255, 0, 0, 25); // Roter QrCode mit 25% Transparenz 
 
-![Red QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-qrcode.png?raw=true) ![Red Transparent QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent.png?raw=true)
+![Red QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-qrcode.png?raw=true) ![Red Transparent QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-25-transparent.png?raw=true)
 
 #### Background Color `(int $red, int $green, int $blue, int $alpha = null)`
 
@@ -145,7 +145,7 @@ Die Hintergrundfarbe eines QrCodes kann über die `backgroundColor` Methode geä
 	QrCode::backgroundColor(255, 0, 0); // QrCode mit rotem Hintergrund
 	QrCode::backgroundColor(255, 0, 0, 25); // QrCode mit rotem Hintergrund und 25% Transparenz 
 
-![Red Background QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![Red Transparent Background QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
+![Red Background QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![Red Transparent Background QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
 
 #### Gradient `$startRed, $startGreen, $startBlue, $endRed, $endGreen, $endBlue, string $type)`
 
@@ -155,11 +155,11 @@ Die folgenden Typen von Gradienten werden unterstützt:
 
 | Typ | Beispiel |
 | --- | --- |
-| `vertical` | ![Veritcal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/vertical.png?raw=true) |
-| `horizontal` | ![Horizontal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/horizontal.png?raw=true) |
-| `diagonal` | ![Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/diagonal.png?raw=true) |
-| `inverse_diagonal` | ![Invrse Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
-| `radial` | ![Radial](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/radial.png?raw=true) |
+| `vertical` | ![Veritcal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/vertical.png?raw=true) |
+| `horizontal` | ![Horizontal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/horizontal.png?raw=true) |
+| `diagonal` | ![Diagonal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/diagonal.png?raw=true) |
+| `inverse_diagonal` | ![Invrse Diagonal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
+| `radial` | ![Radial](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/radial.png?raw=true) |
 
 #### EyeColor `(int $eyeNumber, int $innerRed, int $innerGreen, int $innerBlue, int $outterRed = 0, int $outterGreen = 0, int $outterBlue = 0)`
 
@@ -169,9 +169,9 @@ Die Farben der Positionsmarker können über die `eyeColor` Methode angepasst we
 
 | Auge Nr. | Beispiel |
 | --- | --- |
-| `0` | ![Eye 0](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-0.png?raw=true) |
-| `1` | ![Eye 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)|
-| `2` | ![Eye  2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
+| `0` | ![Eye 0](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-0.png?raw=true) |
+| `1` | ![Eye 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)|
+| `2` | ![Eye  2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
 
 
 #### Style `(string $style, float $size = 0.5)`
@@ -182,9 +182,9 @@ Die Farben der Positionsmarker können über die `eyeColor` Methode angepasst we
 
 | Stil | Beispiel |
 | --- | --- |
-| `square` | ![Square](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `dot` | ![Dot](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/dot.png)|
-| `round` | ![Round](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/round.png?raw=true) |
+| `square` | ![Square](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `dot` | ![Dot](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/dot.png)|
+| `round` | ![Round](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/round.png?raw=true) |
 
 #### Eye Style `(string $style)`
 
@@ -194,8 +194,8 @@ Es werden zwei verschiedene Stile von Positionsmarkern unterstützt: `square` (q
 
 | Style | Example |
 | --- | --- |
-| `square` | ![Square](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `circle` | ![Circle](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true)|
+| `square` | ![Square](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `circle` | ![Circle](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true)|
 
 #### Margin `(int $margin)`
 
@@ -275,7 +275,7 @@ Die `merge` Methode passt ein Bild in einen QrCode ein.  Üblicherweise wird die
 
 >Bei Verwendung der `merge` Methode sollte eine hohe Fehlerkorrekturstufe gewählt werden, um sicherzustellen, dass der QrCode lesbar bleibt.  Wir empfehlen eine Nutzung von `errorCorrection('H')`.
 
-![Merged Logo](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
+![Merged Logo](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
 
 #### Merge Binary String `(string $content, float $percentage = .2)`
 
@@ -425,7 +425,7 @@ Dem Inhaltsparameter der `generate` Methode kann ein Präfix vorangestellt werde
 
 Dieses Paket kann auch ohne Laravel verwendet werden, indem man eine neue Instanz der `Generator` Klasse erzeugt.
 
-	use SimpleSoftwareIO\QrCode\Generator;
+	use LaraZeus\QrCode\Generator;
 
 	$qrcode = new Generator;
 	$qrcode->size(500)->generate('Generiere einen QrCode ohne Laravel!');

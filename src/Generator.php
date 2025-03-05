@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleSoftwareIO\QrCode;
+namespace LaraZeus\QrCode;
 
 use BaconQrCode\Common\ErrorCorrectionLevel;
 use BaconQrCode\Encoder\Encoder;
@@ -29,7 +29,7 @@ use BaconQrCode\Renderer\RendererStyle\RendererStyle;
 use BaconQrCode\Writer;
 use BadMethodCallException;
 use InvalidArgumentException;
-use SimpleSoftwareIO\QrCode\DataTypes\DataTypeInterface;
+use LaraZeus\QrCode\DataTypes\DataTypeInterface;
 
 class Generator
 {
@@ -193,7 +193,7 @@ class Generator
      *
      * @param string $filepath
      * @param float $percentage
-     * @param SimpleSoftwareIO\QrCode\boolean|bool $absolute
+     * @param LaraZeus\QrCode\boolean|bool $absolute
      * @return Generator
      */
     public function merge(string $filepath, float $percentage = .2, bool $absolute = false): self
@@ -571,7 +571,7 @@ class Generator
     {
         $method = ucfirst($method);
 
-        $class = "SimpleSoftwareIO\QrCode\DataTypes\\".$method;
+        $class = "LaraZeus\QrCode\DataTypes\\".$method;
 
         return $class;
     }

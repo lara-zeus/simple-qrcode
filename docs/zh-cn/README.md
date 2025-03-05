@@ -1,4 +1,4 @@
-[![构建状态](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![最新稳定版本](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![最新版本](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![许可](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![下载量](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![构建状态](https://travis-ci.org/LaraZeus/simple-qrcode.svg?branch=master)](https://travis-ci.org/LaraZeus/simple-qrcode) [![最新稳定版本](https://poser.pugx.org/lara-zeus/simple-qrcode/v/stable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![最新版本](https://poser.pugx.org/lara-zeus/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![许可](https://poser.pugx.org/lara-zeus/simple-qrcode/license.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![下载量](https://poser.pugx.org/lara-zeus/simple-qrcode/downloads.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode)
 
 
 - [介绍](#docs-introduction)
@@ -14,7 +14,7 @@
 ## 介绍
 Simple QrCode 是基于[Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode) 开发，适用于Laravel框架的软件包. 我们的目的是让二维码能更加便捷的使用在Laravel框架的项目里.
 
-![Example 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
+![Example 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
 
 <a id="docs-upgrade"></a>
 ## 升级指南
@@ -28,19 +28,19 @@ Simple QrCode 是基于[Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode)
 
 #### Composer安装
 
-使用 `composer require simplesoftwareio/simple-qrcode "~3"` 安装软件包，
+使用 `composer require lara-zeus/simple-qrcode "~3"` 安装软件包，
 
 Laravel将会自动完成安装工作.
 
 #### 添加 Service Provider
 
 ###### Laravel <= 5.4
-注册 `SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class` 至 `config/app.php` 的 `providers` 数组里.
+注册 `LaraZeus\QrCode\QrCodeServiceProvider::class` 至 `config/app.php` 的 `providers` 数组里.
 
 #### 添加 Aliases
 
 ###### Laravel <= 5.4
-最后,注册 `'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class` 至 `config/app.php` 的 `aliases` 数组里.
+最后,注册 `'QrCode' => LaraZeus\QrCode\Facades\QrCode::class` 至 `config/app.php` 的 `aliases` 数组里.
 
 <a id="docs-ideas"></a>
 ## 简例
@@ -105,7 +105,7 @@ Laravel将会自动完成安装工作.
 
 	QrCode::size(100);
 
-![200 像素](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) ![250 像素](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/250-pixels.png?raw=true)
+![200 像素](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) ![250 像素](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/250-pixels.png?raw=true)
 
 #### 颜色  `color(int $red, int $green, int $blue, int $alpha = null)`
 
@@ -116,7 +116,7 @@ Laravel将会自动完成安装工作.
 QrCode::color(255, 0, 0); // 红色二维码
 QrCode::color(255, 0, 0, 25); //红色二维码+25%透明度
 
-![红色二维码](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-qrcode.png?raw=true) ![红色透明二维码](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent.png?raw=true)
+![红色二维码](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-qrcode.png?raw=true) ![红色透明二维码](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-25-transparent.png?raw=true)
 
 
 #### 背景颜色 `backgroundColor(int $red, int $green, int $blue, int $alpha = null)`
@@ -126,7 +126,7 @@ QrCode::color(255, 0, 0, 25); //红色二维码+25%透明度
 	QrCode::backgroundColor(255, 0, 0); // 红色背景二维码
 	QrCode::backgroundColor(255, 0, 0, 25); // 红色25%透明背景二维码
 
-![红色背景二维码](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![红色透明背景二维码](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
+![红色背景二维码](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![红色透明背景二维码](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
 
 #### 渐变 `gradient($startRed, $startGreen, $startBlue, $endRed, $endGreen, $endBlue, string $type)`
 
@@ -136,11 +136,11 @@ QrCode::color(255, 0, 0, 25); //红色二维码+25%透明度
 
 | 类型 | 范例 |
 | --- | --- |
-| `vertical`垂直 | ![垂直](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/vertical.png?raw=true) |
-| `horizontal`水平 | ![水平](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/horizontal.png?raw=true) |
-| `diagonal`对角 | ![对角](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/diagonal.png?raw=true) |
-| `inverse_diagonal`反对角 | ![反对角](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
-| `radial`迳向 | ![迳向](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/radial.png?raw=true) |
+| `vertical`垂直 | ![垂直](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/vertical.png?raw=true) |
+| `horizontal`水平 | ![水平](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/horizontal.png?raw=true) |
+| `diagonal`对角 | ![对角](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/diagonal.png?raw=true) |
+| `inverse_diagonal`反对角 | ![反对角](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
+| `radial`迳向 | ![迳向](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/radial.png?raw=true) |
 
 #### 定位颜色 `eyeColor(int $eyeNumber, int $innerRed, int $innerGreen, int $innerBlue, int $outterRed = 0, int $outterGreen = 0, int $outterBlue = 0)`
 
@@ -148,9 +148,9 @@ QrCode::color(255, 0, 0, 25); //红色二维码+25%透明度
 
 | 数量 | 范例 |
 | --- | --- |
-| `0` | ![Eye 0](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-0.png?raw=true) |
-| `1` | ![Eye 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)|
-| `2` | ![Eye 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
+| `0` | ![Eye 0](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-0.png?raw=true) |
+| `1` | ![Eye 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)|
+| `2` | ![Eye 2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
 
 #### 风格 `style(string $style, float $size = 0.5)`
 
@@ -158,9 +158,9 @@ QrCode::color(255, 0, 0, 25); //红色二维码+25%透明度
 
 | 风格 | 范例 |
 | --- | --- |
-| `sqaure`方 | ![方](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `dot`点 | ![点](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/dot.png)|
-| `round`圆 | ![圆](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/round.png?raw=true) |
+| `sqaure`方 | ![方](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `dot`点 | ![点](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/dot.png)|
+| `round`圆 | ![圆](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/round.png?raw=true) |
 
 #### 定位眼风格 `eyeStyle(string $style)`
 
@@ -168,8 +168,8 @@ QrCode::color(255, 0, 0, 25); //红色二维码+25%透明度
 
 | 风格 | 范例 |
 | --- | --- |
-| `sqaure`方 | ![方](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `circle`圆 | ![圆](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true)|
+| `sqaure`方 | ![方](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `circle`圆 | ![圆](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true)|
 
 #### 边距 `margin(int $margin)`
 
@@ -249,7 +249,7 @@ QrCode 创建二维码时可以使用不同的编码.  默认使用 `ISO-8859-1`
 
 > 为了让二维码保持高可识别度,建议在使用 `merge` 方法时把二维码的容错级别提高. 我们推荐使用: `errorCorrection('H')`.
 
-![合并Logo](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
+![合并Logo](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
 
 #### 二进制合并 `(string $content, float $percentage = .2)`
 
@@ -399,7 +399,7 @@ QrCode 创建二维码时可以使用不同的编码.  默认使用 `ISO-8859-1`
 
 你还可以在Laravel框架之外调用,只需要实例化 `BaconQrCodeGenerator` 类.
 
-	use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+	use LaraZeus\QrCode\BaconQrCodeGenerator;
 
 	$qrcode = new BaconQrCodeGenerator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

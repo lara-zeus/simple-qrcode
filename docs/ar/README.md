@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Build Status](https://travis-ci.org/LaraZeus/simple-qrcode.svg?branch=master)](https://travis-ci.org/LaraZeus/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/stable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![License](https://poser.pugx.org/lara-zeus/simple-qrcode/license.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Total Downloads](https://poser.pugx.org/lara-zeus/simple-qrcode/downloads.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode)
 
 #### [Deutsch](http://www.simplesoftware.io/#/docs/simple-qrcode/de) | [Español](http://www.simplesoftware.io/#/docs/simple-qrcode/es) | [Français](http://www.simplesoftware.io/#/docs/simple-qrcode/fr) | [Italiano](http://www.simplesoftware.io/#/docs/simple-qrcode/it) | [Português](http://www.simplesoftware.io/#/docs/simple-qrcode/pt-br) | [Русский](http://www.simplesoftware.io/#/docs/simple-qrcode/ru) | [日本語](http://www.simplesoftware.io/#/docs/simple-qrcode/ja) | [한국어](http://www.simplesoftware.io/#/docs/simple-qrcode/kr) | [हिंदी](http://www.simplesoftware.io/#/docs/simple-qrcode/hi) | [简体中文](http://www.simplesoftware.io/#/docs/simple-qrcode/zh-cn) | [العربية](https://www.simplesoftware.io/#/docs/simple-qrcode/ar)
 
@@ -9,7 +9,7 @@
 ## المقدمة
 Simple QrCode هو غلاف سهل الاستخدام لإطار عمل Laravel الشهير استنادًا إلى العمل الرائع الذي يقدمه [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  أنشأنا واجهة مألوفة و سهلة التثبيت لمستخدمي لارافل
 
-![المثال 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![المثال 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
+![المثال 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![المثال 2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
 
 <a id="docs-upgrade"></a>
 ## دليل الترقية
@@ -22,7 +22,7 @@ Simple QrCode هو غلاف سهل الاستخدام لإطار عمل Laravel 
 #### v4
 
 > كان هناك خطأ  عند إنشاء 4.1.0 و السماح ل للتغيرات التي حدثت للفرع الرئيسي. دالة `generate` الآن ترجع حالة `Illluminate\Support\HtmlString` إذا كنت تستخدم لارافل.
-> إطلع على https://github.com/SimpleSoftwareIO/simple-qrcode/issues/205 لمزيد من التفاصيل
+> إطلع على https://github.com/LaraZeus/simple-qrcode/issues/205 لمزيد من التفاصيل
 
 
 كانت هنا مشكلة مع واجهة لارافل في الإصدار ال3 التي أحدثت بعض المشاكل في التحميل. الطريقة الوحيدة لإصلاح هذا هو الإعتماد على الإصدار الرابع من الحزمة. إذا أنت من الإصدار V2 لا يوجد اي حاجة لتغيير الكود. التغييرات الآتية فقط تشمل الإصدار الثالث V3
@@ -31,7 +31,7 @@ Simple QrCode هو غلاف سهل الاستخدام لإطار عمل Laravel 
 </div>
 
 ```
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use LaraZeus\QrCode\Facades\QrCode;
 ```
 
 <a id="docs-configuration"></a>
@@ -40,7 +40,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 #### Composer
 
-قم بتشغيل `composer require simplesoftwareio/simple-qrcode "~4"` لإضافة الحزمة. 
+قم بتشغيل `composer require lara-zeus/simple-qrcode "~4"` لإضافة الحزمة. 
 
 لارافل ستقوم تلقائيا بتنصيب الحزمة.
 
@@ -81,7 +81,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 // جميع الأمثلة التالية تفترض أن واجهة Qrcode تم إستدعائها.
 // واجهة Qrcode يتم إستدعائها تلقائيا بالنسبة لمستخدمي لارافل
 
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use LaraZeus\QrCode\Facades\QrCode;
 ```
 </div>
 
@@ -89,7 +89,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 <div dir="ltr">
 
-	use SimpleSoftwareIO\QrCode\Facades\QrCode;
+	use LaraZeus\QrCode\Facades\QrCode;
 
 	QrCode::generate('Make me into a QrCode!');
 
@@ -97,7 +97,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 هذا سيحول الكود إلى QrCode يحمل العبارة التالية:  "Make me into a QrCode!"
 
-![Example QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/make-me-into-a-qrcode.png?raw=true)
+![Example QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/make-me-into-a-qrcode.png?raw=true)
 
 #### Generate `(string $data, string $filename = null)`
 
@@ -149,7 +149,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 </div>
 
-![200 Pixels](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) ![250 Pixels](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/250-pixels.png?raw=true) 
+![200 Pixels](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) ![250 Pixels](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/250-pixels.png?raw=true) 
 
 #### Color `(int $red, int $green, int $blue, int $alpha = null)`
 
@@ -164,7 +164,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 </div>
 
-![Red QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-qrcode.png?raw=true) ![Red Transparent QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent.png?raw=true)
+![Red QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-qrcode.png?raw=true) ![Red Transparent QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-25-transparent.png?raw=true)
 
 #### Background Color `(int $red, int $green, int $blue, int $alpha = null)`
 
@@ -177,7 +177,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 </div>
 
-![Red Background QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![Red Transparent Background QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
+![Red Background QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![Red Transparent Background QrCode](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
 
 #### Gradient `$startRed, $startGreen, $startBlue, $endRed, $endGreen, $endBlue, string $type)`
 
@@ -187,11 +187,11 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 | النوع | مثال |
 | --- | --- |
-| `vertical` | ![Veritcal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/vertical.png?raw=true) |
-| `horizontal` | ![Horizontal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/horizontal.png?raw=true) |
-| `diagonal` | ![Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/diagonal.png?raw=true) |
-| `inverse_diagonal` | ![Invrse Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
-| `radial` | ![Radial](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/radial.png?raw=true) |
+| `vertical` | ![Veritcal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/vertical.png?raw=true) |
+| `horizontal` | ![Horizontal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/horizontal.png?raw=true) |
+| `diagonal` | ![Diagonal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/diagonal.png?raw=true) |
+| `inverse_diagonal` | ![Invrse Diagonal](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
+| `radial` | ![Radial](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/radial.png?raw=true) |
 
 #### EyeColor `(int $eyeNumber, int $innerRed, int $innerGreen, int $innerBlue, int $outterRed = 0, int $outterGreen = 0, int $outterBlue = 0)`
 
@@ -205,9 +205,9 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 | رقم العين | مثال |
 | --- | --- |
-| `0` | ![Eye 0](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-0.png?raw=true) |
-| `1` | ![Eye 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)|
-| `2` | ![Eye  2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
+| `0` | ![Eye 0](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-0.png?raw=true) |
+| `1` | ![Eye 1](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)|
+| `2` | ![Eye  2](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
 
 
 #### Style `(string $style, float $size = 0.5)`
@@ -227,9 +227,9 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 | التنسيق | مثال |
 | --- | --- |
-| `square` | ![Square](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `dot` | ![Dot](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/dot.png)|
-| `round` | ![Round](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/round.png?raw=true) |
+| `square` | ![Square](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `dot` | ![Dot](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/dot.png)|
+| `round` | ![Round](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/round.png?raw=true) |
 
 #### Eye Style `(string $style)`
 
@@ -239,8 +239,8 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 | Style | Example |
 | --- | --- |
-| `square` | ![Square](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
-| `circle` | ![Circle](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true)|
+| `square` | ![Square](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
+| `circle` | ![Circle](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true)|
 
 #### Margin `(int $margin)`
 
@@ -338,7 +338,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 > يجب عليك استعمال نسبة الإرتفاع ل تصحيح الخطأ عندما تستعمل دالة `merge` للتأكد أن ال Qrcode باقي سهل القراءة. نوصي باستخدام `errorCorrection('H')`.
 
-![Merged Logo](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
+![Merged Logo](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
 
 #### Merge Binary String `(string $content, float $percentage = .2)`
 
@@ -531,7 +531,7 @@ This helper generates a scannable bitcoin to send payments.  [More information](
 
 <div dir="ltr">
 
-	use SimpleSoftwareIO\QrCode\Generator;
+	use LaraZeus\QrCode\Generator;
 
 	$qrcode = new Generator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

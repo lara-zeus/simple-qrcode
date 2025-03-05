@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Build Status](https://travis-ci.org/LaraZeus/simple-qrcode.svg?branch=master)](https://travis-ci.org/LaraZeus/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/stable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/lara-zeus/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![License](https://poser.pugx.org/lara-zeus/simple-qrcode/license.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode) [![Total Downloads](https://poser.pugx.org/lara-zeus/simple-qrcode/downloads.svg)](https://packagist.org/packages/lara-zeus/simple-qrcode)
 
 
 - [Введение](#docs-introduction)
@@ -30,14 +30,14 @@ Simple QrCode - простая в использовании обёртка дл
 Находясь в директории вашего проекта laravel, выполните команду:
 
 ```bash
-composer require simplesoftwareio/simple-qrcode
+composer require lara-zeus/simple-qrcode
 ```
 
-Либо добавьте пакет `simplesoftwareio/simple-qrcode` в раздел `require` файла `composer.json`:
+Либо добавьте пакет `lara-zeus/simple-qrcode` в раздел `require` файла `composer.json`:
 
 ```json
 "require": {
-    "simplesoftwareio/simple-qrcode": "~2"
+    "lara-zeus/simple-qrcode": "~2"
 }
 ```
 
@@ -47,7 +47,7 @@ composer require simplesoftwareio/simple-qrcode
 
 Добавьте строчку 
 ```
-SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class
+LaraZeus\QrCode\QrCodeServiceProvider::class
 ``` 
 в конец массива `providers` в файле `config/app.php`.
 
@@ -55,7 +55,7 @@ SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class
 
 Добавьте строчку 
 ```
-'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
+'QrCode' => LaraZeus\QrCode\Facades\QrCode::class
 ``` 
 в конец массива `aliases` в файле `config/app.php`.
 
@@ -271,7 +271,7 @@ QrCode::format('png')->merge('http://www.google.com/someimage.png', .3, true)->g
 > Вы должны использовать высокий уровень коррекции ошибок при использовании метода `merge()` чтобы QR-код остался читаемым. 
 > Рекомендуется использовать `errorCorrection('H')`.
 
-![Merged Logo](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
+![Merged Logo](https://raw.githubusercontent.com/LaraZeus/simple-qrcode/master/docs/imgs/merged-qrcode.png?raw=true)
 
 ### Наложение изображений на QR-код (из двоичной строки)
 
@@ -431,7 +431,7 @@ QrCode::generate('http://www.simplesoftware.io');
 Вы можете использовать этот пакет за пределами Laravel, просто создав новый объект класса `BaconQrCodeGenerator`.
 
 ```php
-use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+use LaraZeus\QrCode\BaconQrCodeGenerator;
 
 $qrcode = new BaconQrCodeGenerator;
 $qrcode->size(500)->generate('Создайте QR-код без Laravel!');
