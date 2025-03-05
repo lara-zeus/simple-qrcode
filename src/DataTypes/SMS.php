@@ -6,36 +6,28 @@ class SMS implements DataTypeInterface
 {
     /**
      * The prefix of the QrCode.
-     *
-     * @var string
      */
-    protected $prefix = 'sms:';
+    protected string $prefix = 'sms:';
 
     /**
      * The separator between the variables.
-     *
-     * @var string
      */
-    protected $separator = '&body=';
+    protected string $separator = '&body=';
 
     /**
      * The phone number.
-     *
-     * @var string
      */
-    protected $phoneNumber;
+    protected string $phoneNumber = '';
 
     /**
      * The SMS message.
-     *
-     * @var string
      */
-    protected $message;
+    protected string $message;
 
     /**
      * Generates the DataType Object and sets all of its properties.
      */
-    public function create(array $arguments)
+    public function create(array $arguments): void
     {
         $this->setProperties($arguments);
     }
@@ -53,7 +45,7 @@ class SMS implements DataTypeInterface
     /**
      * Sets the phone number and message for a sms message.
      */
-    protected function setProperties(array $arguments)
+    protected function setProperties(array $arguments): void
     {
         if (isset($arguments[0])) {
             $this->phoneNumber = $arguments[0];
@@ -65,10 +57,8 @@ class SMS implements DataTypeInterface
 
     /**
      * Builds a SMS string.
-     *
-     * @return string
      */
-    protected function buildSMSString()
+    protected function buildSMSString(): string
     {
         $sms = $this->prefix . $this->phoneNumber;
 

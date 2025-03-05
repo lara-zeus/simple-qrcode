@@ -8,36 +8,28 @@ class Email implements DataTypeInterface
 {
     /**
      * The prefix of the QrCode.
-     *
-     * @var string
      */
-    protected $prefix = 'mailto:';
+    protected string $prefix = 'mailto:';
 
     /**
      * The email address.
-     *
-     * @var string
      */
-    protected $email;
+    protected string $email = '';
 
     /**
      * The subject of the email.
-     *
-     * @var string
      */
-    protected $subject;
+    protected string $subject;
 
     /**
      * The body of an email.
-     *
-     * @var string
      */
-    protected $body;
+    protected ?string $body = null;
 
     /**
      * Generates the DataType Object and sets all of its properties.
      */
-    public function create(array $arguments)
+    public function create(array $arguments): void
     {
         $this->setProperties($arguments);
     }
@@ -57,7 +49,7 @@ class Email implements DataTypeInterface
      *
      * @return string
      */
-    protected function buildEmailString()
+    protected function buildEmailString(): string
     {
         $email = $this->prefix . $this->email;
 
@@ -75,7 +67,7 @@ class Email implements DataTypeInterface
     /**
      * Sets the objects properties.
      */
-    protected function setProperties(array $arguments)
+    protected function setProperties(array $arguments): void
     {
         if (isset($arguments[0])) {
             $this->setEmail($arguments[0]);
@@ -91,7 +83,7 @@ class Email implements DataTypeInterface
     /**
      * Sets the email property.
      */
-    protected function setEmail($email)
+    protected function setEmail($email): void
     {
         if ($this->isValidEmail($email)) {
             $this->email = $email;
@@ -102,9 +94,8 @@ class Email implements DataTypeInterface
      * Ensures an email is valid.
      *
      * @param  string  $email
-     * @return bool
      */
-    protected function isValidEmail($email)
+    protected function isValidEmail($email): bool
     {
         if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new InvalidArgumentException('Invalid email provided');

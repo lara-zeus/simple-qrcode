@@ -6,50 +6,38 @@ class BTC implements DataTypeInterface
 {
     /**
      * The prefix of the QrCode.
-     *
-     * @var string
      */
-    protected $prefix = 'bitcoin:';
+    protected string $prefix = 'bitcoin:';
 
     /**
      * The BitCoin address.
-     *
-     * @var string
      */
-    protected $address;
+    protected string $address;
 
     /**
      * The amount to send.
-     *
-     * @var int
      */
-    protected $amount;
+    protected float $amount;
 
     /**
      * The BitCoin transaction label.
-     *
-     * @var string
      */
-    protected $label;
+    protected ?string $label = null;
 
     /**
      * The BitCoin message to send.
-     *
-     * @var string
      */
-    protected $message;
+    protected ?string $message = null;
 
     /**
      * The BitCoin return URL.
-     *
-     * @var string
      */
-    protected $returnAddress;
+    protected ?string $returnAddress = null;
 
     /**
      * Generates the DataType Object and sets all of its properties.
      */
-    public function create(array $arguments)
+    public function create(array $arguments): void
     {
         $this->setProperties($arguments);
     }
@@ -67,7 +55,7 @@ class BTC implements DataTypeInterface
     /**
      * Sets the BitCoin arguments.
      */
-    protected function setProperties(array $arguments)
+    protected function setProperties(array $arguments): void
     {
         if (isset($arguments[0])) {
             $this->address = $arguments[0];
@@ -85,7 +73,7 @@ class BTC implements DataTypeInterface
     /**
      * Sets the optional BitCoin options.
      */
-    protected function setOptions(array $options)
+    protected function setOptions(array $options): void
     {
         if (isset($options['label'])) {
             $this->label = $options['label'];
@@ -102,10 +90,8 @@ class BTC implements DataTypeInterface
 
     /**
      * Builds a BitCoin string.
-     *
-     * @return string
      */
-    protected function buildBitCoinString()
+    protected function buildBitCoinString(): string
     {
         $query = http_build_query([
             'amount' => $this->amount,
@@ -114,8 +100,6 @@ class BTC implements DataTypeInterface
             'r' => $this->returnAddress,
         ]);
 
-        $btc = $this->prefix . $this->address . '?' . $query;
-
-        return $btc;
+        return $this->prefix . $this->address . '?' . $query;
     }
 }

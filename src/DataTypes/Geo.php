@@ -6,32 +6,28 @@ class Geo implements DataTypeInterface
 {
     /**
      * The prefix of the QrCode.
-     *
-     * @var string
      */
-    protected $prefix = 'geo:';
+    protected string $prefix = 'geo:';
 
     /**
      * The separator between the variables.
-     *
-     * @var string
      */
-    protected $separator = ',';
+    protected string $separator = ',';
 
     /**
      * The latitude.
      */
-    protected $latitude;
+    protected string $latitude;
 
     /**
      * The longitude.
      */
-    protected $longitude;
+    protected string $longitude;
 
     /**
      * Generates the DataType Object and sets all of its properties.
      */
-    public function create(array $arguments)
+    public function create(array $arguments): void
     {
         $this->latitude = $arguments[0];
         $this->longitude = $arguments[1];

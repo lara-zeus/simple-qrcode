@@ -6,20 +6,18 @@ class PhoneNumber implements DataTypeInterface
 {
     /**
      * The prefix of the QrCode.
-     *
-     * @var string
      */
-    protected $prefix = 'tel:';
+    protected string $prefix = 'tel:';
 
     /**
      * The phone number.
      */
-    protected $phoneNumber;
+    protected string $phoneNumber;
 
     /**
      * Generates the DataType Object and sets all of its properties.
      */
-    public function create(array $arguments)
+    public function create(array $arguments): void
     {
         $this->phoneNumber = $arguments[0];
     }

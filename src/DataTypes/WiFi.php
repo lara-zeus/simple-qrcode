@@ -6,50 +6,38 @@ class WiFi implements DataTypeInterface
 {
     /**
      * The prefix of the QrCode.
-     *
-     * @var string
      */
-    protected $prefix = 'WIFI:';
+    protected string $prefix = 'WIFI:';
 
     /**
      * The separator between the variables.
-     *
-     * @var string
      */
-    protected $separator = ';';
+    protected string $separator = ';';
 
     /**
      * The encryption of the network.  WEP or WPA.
-     *
-     * @var string
      */
-    protected $encryption;
+    protected string $encryption;
 
     /**
      * The SSID of the WiFi network.
-     *
-     * @var string
      */
-    protected $ssid;
+    protected string $ssid;
 
     /**
      * The password of the network.
-     *
-     * @var string
      */
-    protected $password;
+    protected string $password;
 
     /**
      * Whether the network is a hidden SSID or not.
-     *
-     * @var bool
      */
-    protected $hidden;
+    protected string $hidden;
 
     /**
      * Generates the DataType Object and sets all of its properties.
      */
-    public function create(array $arguments)
+    public function create(array $arguments): void
     {
         $this->setProperties($arguments);
     }
@@ -66,10 +54,8 @@ class WiFi implements DataTypeInterface
 
     /**
      * Builds the WiFi string.
-     *
-     * @return string
      */
-    protected function buildWifiString()
+    protected function buildWifiString(): string
     {
         $wifi = $this->prefix;
 
@@ -92,7 +78,7 @@ class WiFi implements DataTypeInterface
     /**
      * Sets the WiFi properties.
      */
-    protected function setProperties(array $arguments)
+    protected function setProperties(array $arguments): void
     {
         $arguments = $arguments[0];
         if (isset($arguments['encryption'])) {

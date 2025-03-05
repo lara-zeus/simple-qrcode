@@ -8,80 +8,58 @@ class ImageMerge
 {
     /**
      * Holds the QrCode image.
-     *
-     * @var Image
      */
-    protected $sourceImage;
+    protected Image $sourceImage;
 
     /**
      * Holds the merging image.
-     *
-     * @var Image
      */
-    protected $mergeImage;
+    protected Image $mergeImage;
 
     /**
      * The height of the source image.
-     *
-     * @var int
      */
-    protected $sourceImageHeight;
+    protected int $sourceImageHeight;
 
     /**
      * The width of the source image.
-     *
-     * @var int
      */
-    protected $sourceImageWidth;
+    protected int $sourceImageWidth;
 
     /**
      * The height of the merge image.
-     *
-     * @var int
      */
-    protected $mergeImageHeight;
+    protected int $mergeImageHeight;
 
     /**
      * The width of the merge image.
-     *
-     * @var int
      */
-    protected $mergeImageWidth;
+    protected int $mergeImageWidth;
 
     /**
      * Holds the radio of the merging image.
-     *
-     * @var float
      */
-    protected $mergeRatio;
+    protected float $mergeRatio;
 
     /**
      * The height of the merge image after it is merged.
-     *
-     * @var int
      */
-    protected $postMergeImageHeight;
+    protected int $postMergeImageHeight;
 
     /**
      * The width of the merge image after it is merged.
-     *
-     * @var int
      */
-    protected $postMergeImageWidth;
+    protected int $postMergeImageWidth;
 
     /**
      * The position that the merge image is placed on top of the source image.
-     *
-     * @var int
      */
-    protected $centerY;
+    protected int $centerY;
 
     /**
      * The position that the merge image is placed on top of the source image.
-     *
-     * @var int
      */
-    protected $centerX;
+    protected int $centerX;
 
     /**
      * Creates a new ImageMerge object.
@@ -100,9 +78,8 @@ class ImageMerge
      * This is usually used with logos to imprint a logo into a QrCode.
      *
      * @param  $percentage  float The percentage of size relative to the entire QR of the merged image
-     * @return string
      */
-    public function merge($percentage)
+    public function merge(float $percentage): string
     {
         $this->setProperties($percentage);
 
@@ -142,10 +119,8 @@ class ImageMerge
 
     /**
      * Creates a PNG Image.
-     *
-     * @return string
      */
-    protected function createImage()
+    protected function createImage(): string
     {
         ob_start();
         imagepng($this->sourceImage->getImageResource());
@@ -157,9 +132,8 @@ class ImageMerge
      * Sets the objects properties.
      *
      * @param  $percentage  float The percentage that the merge image should take up.
-     * @return void
      */
-    protected function setProperties($percentage)
+    protected function setProperties($percentage): void
     {
         if ($percentage > 1) {
             throw new InvalidArgumentException('$percentage must be less than 1');
@@ -177,25 +151,22 @@ class ImageMerge
 
     /**
      * Calculates the center of the source Image using the Merge image.
-     *
-     * @return void
      */
-    protected function calculateCenter()
+    protected function calculateCenter(): void
     {
-        $this->centerX = intval(($this->sourceImageWidth / 2) - ($this->postMergeImageWidth / 2));
-        $this->centerY = intval(($this->sourceImageHeight / 2) - ($this->postMergeImageHeight / 2));
+        $this->centerX = (int) (($this->sourceImageWidth / 2) - ($this->postMergeImageWidth / 2));
+        $this->centerY = (int) (($this->sourceImageHeight / 2) - ($this->postMergeImageHeight / 2));
     }
 
     /**
      * Calculates the width of the merge image being placed on the source image.
      *
      * @param  float  $percentage
-     * @return void
      */
-    protected function calculateOverlap($percentage)
+    protected function calculateOverlap($percentage): void
     {
         $this->mergeRatio = round($this->mergeImageWidth / $this->mergeImageHeight, 2);
-        $this->postMergeImageWidth = intval($this->sourceImageWidth * $percentage);
-        $this->postMergeImageHeight = intval($this->postMergeImageWidth / $this->mergeRatio);
+        $this->postMergeImageWidth = (int) ($this->sourceImageWidth * $percentage);
+        $this->postMergeImageHeight = (int) ($this->postMergeImageWidth / $this->mergeRatio);
     }
 }

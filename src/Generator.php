@@ -4,7 +4,6 @@ namespace LaraZeus\QrCode;
 
 use BaconQrCode\Common\ErrorCorrectionLevel;
 use BaconQrCode\Encoder\Encoder;
-use BaconQrCode\Exception\WriterException;
 use BaconQrCode\Renderer\Color\Alpha;
 use BaconQrCode\Renderer\Color\ColorInterface;
 use BaconQrCode\Renderer\Color\Rgb;
@@ -35,24 +34,18 @@ class Generator
 {
     /**
      * Holds the selected formatter.
-     *
-     * @var string
      */
-    protected $format = 'svg';
+    protected string $format = 'svg';
 
     /**
      * Holds the size of the QrCode in pixels.
-     *
-     * @var int
      */
-    protected $pixels = 100;
+    protected int $pixels = 100;
 
     /**
      * Holds the margin size of the QrCode.
-     *
-     * @var int
      */
-    protected $margin = 0;
+    protected int $margin = 0;
 
     /**
      * Holds the selected error correction.
@@ -60,10 +53,8 @@ class Generator
      * M: 15% loss.
      * Q: 25% loss.
      * H: 30% loss.
-     *
-     * @var string|null
      */
-    protected $errorCorrection = null;
+    protected ?ErrorCorrectionLevel $errorCorrection = null;
 
     /**
      * Holds the selected encoder.  Possible values are
@@ -72,76 +63,56 @@ class Generator
      * ISO-8859-12, ISO-8859-13, ISO-8859-14, ISO-8859-15, ISO-8859-16,
      * SHIFT-JIS, WINDOWS-1250, WINDOWS-1251, WINDOWS-1252, WINDOWS-1256,
      * UTF-16BE, UTF-8, ASCII, GBK, EUC-KR.
-     *
-     * @var string
      */
-    protected $encoding = Encoder::DEFAULT_BYTE_MODE_ECODING;
+    protected string $encoding = Encoder::DEFAULT_BYTE_MODE_ENCODING;
 
     /**
      * The style of the blocks within the QrCode.
      * Possible values are square, dot, and round.
-     *
-     * @var string
      */
-    protected $style = 'square';
+    protected string $style = 'square';
 
     /**
      * The size of the selected style between 0 and 1.
      * This only applies to dot and round.
-     *
-     * @var float|null
      */
-    protected $styleSize = null;
+    protected ?float $styleSize = null;
 
     /**
      * The style to apply to the eye.
      * Possible values are circle and square.
-     *
-     * @var string|null
      */
-    protected $eyeStyle = null;
+    protected ?string $eyeStyle = null;
 
     /**
      * The foreground color of the QrCode.
-     *
-     * @var ColorInterface|null
      */
-    protected $color = null;
+    protected ?ColorInterface $color = null;
 
     /**
      * The background color of the QrCode.
-     *
-     * @var ColorInterface|null
      */
-    protected $backgroundColor = null;
+    protected ?ColorInterface $backgroundColor = null;
 
     /**
      * An array that holds EyeFills of the color of the eyes.
-     *
-     * @var array
      */
-    protected $eyeColors = [];
+    protected array $eyeColors = [];
 
     /**
      * The gradient to apply to the QrCode.
-     *
-     * @var Gradient
      */
-    protected $gradient;
+    protected ?Gradient $gradient = null;
 
     /**
      * Holds an image string that will be merged with the QrCode.
-     *
-     * @var null|string
      */
-    protected $imageMerge = null;
+    protected ?string $imageMerge = null;
 
     /**
      * The percentage that a merged image should take over the source image.
-     *
-     * @var float
      */
-    protected $imagePercentage = .2;
+    protected float $imagePercentage = .2;
 
     /**
      * Creates a new datatype object and then generates a QrCode.
@@ -151,17 +122,9 @@ class Generator
         $dataType = $this->createClass($method);
         $dataType->create($arguments);
 
-        return $this->generate(strval($dataType));
+        return $this->generate((string) $dataType);
     }
 
-    /**
-     * Generates the QrCode.
-     *
-     * @return void|\Illuminate\Support\HtmlString|string
-     *
-     * @throws WriterException
-     * @throws InvalidArgumentException
-     */
     public function generate(string $text, ?string $filename = null)
     {
         $qrCode = $this->getWriter($this->getRenderer())->writeString($text, $this->encoding, $this->errorCorrection);
@@ -186,8 +149,6 @@ class Generator
 
     /**
      * Merges an image over the QrCode.
-     *
-     * @param  LaraZeus\QrCode\boolean|bool  $absolute
      */
     public function merge(string $filepath, float $percentage = .2, bool $absolute = false): self
     {
@@ -495,8 +456,6 @@ class Generator
     {
         $method = ucfirst($method);
 
-        $class = "LaraZeus\QrCode\DataTypes\\" . $method;
-
-        return $class;
+        return "LaraZeus\QrCode\DataTypes\\" . $method;
     }
 }

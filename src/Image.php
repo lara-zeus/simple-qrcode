@@ -2,21 +2,21 @@
 
 namespace LaraZeus\QrCode;
 
+use GdImage;
+
 class Image
 {
     /**
      * Holds the image resource.
-     *
-     * @var resource
      */
-    protected $image;
+    protected GdImage | false $image;
 
     /**
      * Creates a new Image object.
      *
-     * @param  $image  string An image string
+     * @param  string  $image  An image string
      */
-    public function __construct($image)
+    public function __construct(string $image)
     {
         $this->image = imagecreatefromstring($image);
     }
@@ -26,7 +26,7 @@ class Image
      *
      * @return int
     */
-    public function getWidth()
+    public function getWidth(): false | int
     {
         return imagesx($this->image);
     }
@@ -36,27 +36,23 @@ class Image
      *
      * @return int
      */
-    public function getHeight()
+    public function getHeight(): false | int
     {
         return imagesy($this->image);
     }
 
     /**
      * Returns the image string.
-     *
-     * @return string
      */
-    public function getImageResource()
+    public function getImageResource(): GdImage | false
     {
         return $this->image;
     }
 
     /**
      * Sets the image string.
-     *
-     * @param  resource  $image
      */
-    public function setImageResource($image)
+    public function setImageResource($image): void
     {
         $this->image = $image;
     }
