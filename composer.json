@@ -6,8 +6,8 @@
     "license" : "MIT",
     "authors": [
         {
-            "name": "Simple Software LLC",
-            "email": "support@simplesoftware.io"
+            "name": "Lara Zeus (Ash)",
+            "email": "info@larazeus.com"
         }
     ],
     "require": {
@@ -16,7 +16,7 @@
         "bacon/bacon-qr-code": "^3.0"
     },
     "require-dev": {
-        "mockery/mockery": "~1",
+        "roave/security-advisories": "dev-latest",
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^8.6",
         "larastan/larastan": "^3.0",
@@ -27,10 +27,6 @@
         "pestphp/pest-plugin-laravel": "^3.0",
         "pestphp/pest-plugin-livewire": "^3.0",
         "phpstan/extension-installer": "^1.4"
-    },
-    "suggest": {
-        "ext-imagick": "Allows the generation of PNG QrCodes.",
-        "illuminate/support": "Allows for use within Laravel."
     },
     "autoload": {
         "psr-4": {
@@ -48,6 +44,14 @@
             "aliases": {
                 "QrCode": "LaraZeus\\QrCode\\Facades\\QrCode"
             }
+        }
+    },
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
         }
     }
 }

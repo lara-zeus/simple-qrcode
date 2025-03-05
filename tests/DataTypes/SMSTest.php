@@ -1,13 +1,13 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
 use LaraZeus\QrCode\DataTypes\SMS;
+use PHPUnit\Framework\TestCase;
 
 class SMSTest extends TestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
-        $this->sms = new SMS();
+        $this->sms = new SMS;
     }
 
     public function test_it_generates_a_proper_format_with_a_phone_number()

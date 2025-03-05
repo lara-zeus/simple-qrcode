@@ -14,7 +14,7 @@ class Image
     /**
      * Creates a new Image object.
      *
-     * @param $image string An image string
+     * @param  $image  string An image string
      */
     public function __construct($image)
     {
@@ -54,7 +54,7 @@ class Image
     /**
      * Sets the image string.
      *
-     * @param resource $image
+     * @param  resource  $image
      */
     public function setImageResource($image)
     {

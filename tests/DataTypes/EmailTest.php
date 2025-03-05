@@ -1,13 +1,13 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
 use LaraZeus\QrCode\DataTypes\Email;
+use PHPUnit\Framework\TestCase;
 
 class EmailTest extends TestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
-        $this->email = new Email();
+        $this->email = new Email;
     }
 
     public function test_it_generates_the_proper_format_when_only_an_email_address_is_supplied()

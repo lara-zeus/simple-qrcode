@@ -10,8 +10,8 @@ use BaconQrCode\Renderer\Module\RoundnessModule;
 use BaconQrCode\Renderer\Module\SquareModule;
 use BaconQrCode\Renderer\RendererStyle\Gradient;
 use BaconQrCode\Renderer\RendererStyle\RendererStyle;
-use PHPUnit\Framework\TestCase;
 use LaraZeus\QrCode\Generator;
+use PHPUnit\Framework\TestCase;
 
 class GeneratorTest extends TestCase
 {

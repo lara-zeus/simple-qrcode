@@ -1,13 +1,13 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
 use LaraZeus\QrCode\DataTypes\BTC;
+use PHPUnit\Framework\TestCase;
 
 class BTCTest extends TestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
-        $this->btc = new BTC();
+        $this->btc = new BTC;
     }
 
     public function test_it_generates_a_valid_btc_qrcode_with_an_address_and_amount()
@@ -34,13 +34,13 @@ class BTCTest extends TestCase
             'btcaddress',
             0.0034,
             [
-                'label'         => 'label',
-                'message'       => 'message',
+                'label' => 'label',
+                'message' => 'message',
                 'returnAddress' => 'https://www.returnaddress.com',
             ],
         ]);
 
-        $properFormat = 'bitcoin:btcaddress?amount=0.0034&label=label&message=message&r='.urlencode('https://www.returnaddress.com');
+        $properFormat = 'bitcoin:btcaddress?amount=0.0034&label=label&message=message&r=' . urlencode('https://www.returnaddress.com');
 
         $this->assertEquals($properFormat, strval($this->btc));
     }

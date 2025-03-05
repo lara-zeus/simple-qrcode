@@ -20,22 +20,16 @@ class Geo implements DataTypeInterface
 
     /**
      * The latitude.
-     *
-     * @var
      */
     protected $latitude;
 
     /**
      * The longitude.
-     *
-     * @var
      */
     protected $longitude;
 
     /**
      * Generates the DataType Object and sets all of its properties.
-     *
-     * @param $arguments
      */
     public function create(array $arguments)
     {
@@ -50,6 +44,6 @@ class Geo implements DataTypeInterface
      */
     public function __toString()
     {
-        return $this->prefix.$this->latitude.$this->separator.$this->longitude;
+        return $this->prefix . $this->latitude . $this->separator . $this->longitude;
     }
 }

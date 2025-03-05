@@ -1,8 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
 use LaraZeus\QrCode\Image;
 use LaraZeus\QrCode\ImageMerge;
+use PHPUnit\Framework\TestCase;
 
 class ImageMergeTest extends TestCase
 {
@@ -36,24 +36,25 @@ class ImageMergeTest extends TestCase
 
     /**
      * The location of the test image that is being merged.
+     *
      * @var mixed
      */
     protected $mergeImagePath;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
-        $this->testImagePath = file_get_contents(dirname(__FILE__).'/Images/simplesoftware-icon-grey-blue.png');
-        $this->mergeImagePath = file_get_contents(dirname(__FILE__).'/Images/200x300.png');
+        $this->testImagePath = file_get_contents(dirname(__FILE__) . '/Images/simplesoftware-icon-grey-blue.png');
+        $this->mergeImagePath = file_get_contents(dirname(__FILE__) . '/Images/200x300.png');
         $this->testImage = new ImageMerge(
             new Image($this->testImagePath),
             new Image($this->mergeImagePath)
         );
 
-        $this->testImageSaveLocation = dirname(__FILE__).'/testImage.png';
-        $this->compareTestSaveLocation = dirname(__FILE__).'/compareImage.png';
+        $this->testImageSaveLocation = dirname(__FILE__) . '/testImage.png';
+        $this->compareTestSaveLocation = dirname(__FILE__) . '/compareImage.png';
     }
 
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         @unlink($this->testImageSaveLocation);
         @unlink($this->compareTestSaveLocation);
@@ -61,11 +62,11 @@ class ImageMergeTest extends TestCase
 
     public function test_it_merges_two_images_together_and_centers_it()
     {
-        //We know the source image is 512x512 and the merge image is 200x300
+        // We know the source image is 512x512 and the merge image is 200x300
         $source = imagecreatefromstring($this->testImagePath);
         $merge = imagecreatefromstring($this->mergeImagePath);
 
-        //Create a PNG and place the image in the middle using 20% of the area.
+        // Create a PNG and place the image in the middle using 20% of the area.
         imagecopyresampled(
             $source,
             $merge,

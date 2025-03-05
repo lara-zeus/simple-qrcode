@@ -1,6 +1,6 @@
-The MIT License (MIT)
+MIT License
 
-Copyright (c) 2014-2020 Simple Software LLC www.simplesoftware.io
+Copyright (c) Lara Zeus (Ash)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

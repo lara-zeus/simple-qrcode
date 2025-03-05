@@ -48,8 +48,6 @@ class WiFi implements DataTypeInterface
 
     /**
      * Generates the DataType Object and sets all of its properties.
-     *
-     * @param $arguments
      */
     public function create(array $arguments)
     {
@@ -76,16 +74,16 @@ class WiFi implements DataTypeInterface
         $wifi = $this->prefix;
 
         if (isset($this->encryption)) {
-            $wifi .= 'T:'.$this->encryption.$this->separator;
+            $wifi .= 'T:' . $this->encryption . $this->separator;
         }
         if (isset($this->ssid)) {
-            $wifi .= 'S:'.$this->ssid.$this->separator;
+            $wifi .= 'S:' . $this->ssid . $this->separator;
         }
         if (isset($this->password)) {
-            $wifi .= 'P:'.$this->password.$this->separator;
+            $wifi .= 'P:' . $this->password . $this->separator;
         }
         if (isset($this->hidden)) {
-            $wifi .= 'H:'.$this->hidden.$this->separator;
+            $wifi .= 'H:' . $this->hidden . $this->separator;
         }
 
         return $wifi;
@@ -93,8 +91,6 @@ class WiFi implements DataTypeInterface
 
     /**
      * Sets the WiFi properties.
-     *
-     * @param $arguments
      */
     protected function setProperties(array $arguments)
     {

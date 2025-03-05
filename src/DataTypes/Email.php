@@ -36,8 +36,6 @@ class Email implements DataTypeInterface
 
     /**
      * Generates the DataType Object and sets all of its properties.
-     *
-     * @param $arguments
      */
     public function create(array $arguments)
     {
@@ -61,14 +59,14 @@ class Email implements DataTypeInterface
      */
     protected function buildEmailString()
     {
-        $email = $this->prefix.$this->email;
+        $email = $this->prefix . $this->email;
 
         if (isset($this->subject) || isset($this->body)) {
             $data = [
                 'subject' => $this->subject,
-                'body'    => $this->body,
+                'body' => $this->body,
             ];
-            $email .= '?'.http_build_query($data);
+            $email .= '?' . http_build_query($data);
         }
 
         return $email;
@@ -76,8 +74,6 @@ class Email implements DataTypeInterface
 
     /**
      * Sets the objects properties.
-     *
-     * @param $arguments
      */
     protected function setProperties(array $arguments)
     {
@@ -94,8 +90,6 @@ class Email implements DataTypeInterface
 
     /**
      * Sets the email property.
-     *
-     * @param $email
      */
     protected function setEmail($email)
     {
@@ -107,8 +101,7 @@ class Email implements DataTypeInterface
     /**
      * Ensures an email is valid.
      *
-     * @param string $email
-     *
+     * @param  string  $email
      * @return bool
      */
     protected function isValidEmail($email)

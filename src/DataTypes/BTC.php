@@ -48,8 +48,6 @@ class BTC implements DataTypeInterface
 
     /**
      * Generates the DataType Object and sets all of its properties.
-     *
-     * @param $arguments
      */
     public function create(array $arguments)
     {
@@ -68,8 +66,6 @@ class BTC implements DataTypeInterface
 
     /**
      * Sets the BitCoin arguments.
-     *
-     * @param array $arguments
      */
     protected function setProperties(array $arguments)
     {
@@ -88,8 +84,6 @@ class BTC implements DataTypeInterface
 
     /**
      * Sets the optional BitCoin options.
-     *
-     * @param array $options
      */
     protected function setOptions(array $options)
     {
@@ -114,13 +108,13 @@ class BTC implements DataTypeInterface
     protected function buildBitCoinString()
     {
         $query = http_build_query([
-            'amount'    => $this->amount,
-            'label'     => $this->label,
-            'message'  => $this->message,
-            'r'         => $this->returnAddress,
+            'amount' => $this->amount,
+            'label' => $this->label,
+            'message' => $this->message,
+            'r' => $this->returnAddress,
         ]);
 
-        $btc = $this->prefix.$this->address.'?'.$query;
+        $btc = $this->prefix . $this->address . '?' . $query;
 
         return $btc;
     }

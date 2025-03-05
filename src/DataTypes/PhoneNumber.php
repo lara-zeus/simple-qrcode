@@ -13,15 +13,11 @@ class PhoneNumber implements DataTypeInterface
 
     /**
      * The phone number.
-     *
-     * @var
      */
     protected $phoneNumber;
 
     /**
      * Generates the DataType Object and sets all of its properties.
-     *
-     * @param $arguments
      */
     public function create(array $arguments)
     {
@@ -35,6 +31,6 @@ class PhoneNumber implements DataTypeInterface
      */
     public function __toString()
     {
-        return $this->prefix.$this->phoneNumber;
+        return $this->prefix . $this->phoneNumber;
     }
 }

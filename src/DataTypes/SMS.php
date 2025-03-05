@@ -34,8 +34,6 @@ class SMS implements DataTypeInterface
 
     /**
      * Generates the DataType Object and sets all of its properties.
-     *
-     * @param $arguments
      */
     public function create(array $arguments)
     {
@@ -54,8 +52,6 @@ class SMS implements DataTypeInterface
 
     /**
      * Sets the phone number and message for a sms message.
-     *
-     * @param array $arguments
      */
     protected function setProperties(array $arguments)
     {
@@ -74,10 +70,10 @@ class SMS implements DataTypeInterface
      */
     protected function buildSMSString()
     {
-        $sms = $this->prefix.$this->phoneNumber;
+        $sms = $this->prefix . $this->phoneNumber;
 
         if (isset($this->message)) {
-            $sms .= $this->separator.$this->message;
+            $sms .= $this->separator . $this->message;
         }
 
         return $sms;

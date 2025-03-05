@@ -86,8 +86,8 @@ class ImageMerge
     /**
      * Creates a new ImageMerge object.
      *
-     * @param $sourceImage Image The image that will be merged over.
-     * @param $mergeImage Image The image that will be used to merge with $sourceImage
+     * @param  $sourceImage  Image The image that will be merged over.
+     * @param  $mergeImage  Image The image that will be used to merge with $sourceImage
      */
     public function __construct(Image $sourceImage, Image $mergeImage)
     {
@@ -99,8 +99,7 @@ class ImageMerge
      * Returns an QrCode that has been merge with another image.
      * This is usually used with logos to imprint a logo into a QrCode.
      *
-     * @param $percentage float The percentage of size relative to the entire QR of the merged image
-     *
+     * @param  $percentage  float The percentage of size relative to the entire QR of the merged image
      * @return string
      */
     public function merge($percentage)
@@ -157,8 +156,7 @@ class ImageMerge
     /**
      * Sets the objects properties.
      *
-     * @param $percentage float The percentage that the merge image should take up.
-     *
+     * @param  $percentage  float The percentage that the merge image should take up.
      * @return void
      */
     protected function setProperties($percentage)
@@ -191,8 +189,7 @@ class ImageMerge
     /**
      * Calculates the width of the merge image being placed on the source image.
      *
-     * @param float $percentage
-     *
+     * @param  float  $percentage
      * @return void
      */
     protected function calculateOverlap($percentage)
