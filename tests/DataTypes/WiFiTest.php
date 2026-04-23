@@ -3,7 +3,7 @@
 use LaraZeus\QrCode\DataTypes\WiFi;
 
 beforeEach(function () {
-    $this->wifi = new Wifi;
+    $this->wifi = new WiFi;
 });
 test('it generates a proper format with just the ssid', function () {
     $this->wifi->create([

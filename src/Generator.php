@@ -27,6 +27,7 @@ use BaconQrCode\Renderer\RendererStyle\GradientType;
 use BaconQrCode\Renderer\RendererStyle\RendererStyle;
 use BaconQrCode\Writer;
 use BadMethodCallException;
+use Illuminate\Support\HtmlString;
 use InvalidArgumentException;
 use LaraZeus\QrCode\DataTypes\DataTypeInterface;
 
@@ -140,8 +141,8 @@ class Generator
             return;
         }
 
-        if (class_exists(\Illuminate\Support\HtmlString::class)) {
-            return new \Illuminate\Support\HtmlString($qrCode);
+        if (class_exists(HtmlString::class)) {
+            return new HtmlString($qrCode);
         }
 
         return $qrCode;
