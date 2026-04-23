@@ -10,6 +10,7 @@ use BaconQrCode\Renderer\Module\RoundnessModule;
 use BaconQrCode\Renderer\Module\SquareModule;
 use BaconQrCode\Renderer\RendererStyle\Gradient;
 use BaconQrCode\Renderer\RendererStyle\RendererStyle;
+use Illuminate\Support\HtmlString;
 use LaraZeus\QrCode\Generator;
 
 test('chaining is possible', function () {
@@ -158,6 +159,6 @@ test('it throws an exception if datatype is not found', function () {
     (new Generator)->notReal('fooBar');
 });
 test('generator can return illuminate support htmlstring', function () {
-    $this->getMockBuilder(\Illuminate\Support\HtmlString::class)->getMock();
-    expect((new Generator)->generate('fooBar'))->toBeInstanceOf(\Illuminate\Support\HtmlString::class);
+    $this->getMockBuilder(HtmlString::class)->getMock();
+    expect((new Generator)->generate('fooBar'))->toBeInstanceOf(HtmlString::class);
 });
