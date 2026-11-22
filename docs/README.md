@@ -356,13 +356,21 @@ This helper generates a QrCode that can be scanned and then dials a number.
 
 This helper makes SMS messages that can be prefilled with the send to address and body of the message:
 
-	QrCode::SMS($phoneNumber, $message);
+	QrCode::SMS($phoneNumber, $message, $format);
 	
 	//Creates a text message with the number filled in.
 	QrCode::SMS('555-555-5555');
 	
-	//Creates a text message with the number and message filled in.
+	//Creates a text message with the number and message filled in (default: sms:555-555-5555&body=Body of the message).
 	QrCode::SMS('555-555-5555', 'Body of the message');
+
+	//Creates a text message using the smsto: format for Android / ZXing compatibility (smsto:555-555-5555:Body of the message).
+	QrCode::SMS('555-555-5555', 'Body of the message', 'smsto');
+
+	//Creates a text message using the RFC 5724 format (sms:555-555-5555?body=Body of the message).
+	QrCode::SMS('555-555-5555', 'Body of the message', 'rfc');
+
+Supported `$format` values: `sms` (default, iOS-compatible `&body=`), `smsto` (`smsto:number:message`, recommended for Android cameras), and `rfc` (`sms:number?body=message`).
 
 #### WiFi
 
