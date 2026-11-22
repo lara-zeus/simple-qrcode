@@ -2,6 +2,8 @@
 
 namespace LaraZeus\QrCode\DataTypes;
 
+use InvalidArgumentException;
+
 class SMS implements DataTypeInterface
 {
     /**
@@ -43,7 +45,7 @@ class SMS implements DataTypeInterface
     }
 
     /**
-     * Sets the phone number and message for a sms message.
+     * Sets the phone number, message, and optional format for an SMS message.
      */
     protected function setProperties(array $arguments): void
     {
@@ -53,6 +55,24 @@ class SMS implements DataTypeInterface
         if (isset($arguments[1])) {
             $this->message = $arguments[1];
         }
+        if (isset($arguments[2])) {
+            $this->setFormat($arguments[2]);
+        }
+    }
+
+    /**
+     * Sets the prefix and separator based on the requested SMS format.
+     */
+    protected function setFormat(string $format): void
+    {
+        $normalized = strtolower(rtrim($format, ':'));
+
+        match ($normalized) {
+            'sms' => [$this->prefix, $this->separator] = ['sms:', '&body='],
+            'smsto' => [$this->prefix, $this->separator] = ['smsto:', ':'],
+            'rfc' => [$this->prefix, $this->separator] = ['sms:', '?body='],
+            default => throw new InvalidArgumentException("Invalid SMS format: {$format}. Supported formats are: sms, smsto, rfc."),
+        };
     }
 
     /**
